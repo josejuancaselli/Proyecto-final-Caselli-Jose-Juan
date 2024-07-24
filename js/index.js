@@ -69,7 +69,7 @@ while (producto.toUpperCase() != "NO") {
 }
 alert ("Gracias por comprar con nosotros!")
 console.log ("El precio final de su compra es " + precioFinal)
-// console.log ("Total de " + precioFinal + " de ",  compra)
+
 
 
 
