@@ -3,6 +3,7 @@ let pantalon = 150000
 let remera = 10000
 let camisa = 80000
 let precioFinal = 0
+// let compra = " "
 
 alert("Que producto esta buscando? remera, pantalon, camisa o zapatillas?")
 let producto = prompt("Ingrese el producto que esta buscando y le diremos su precio")
@@ -40,15 +41,19 @@ if (producto.toUpperCase() === "NO") {
 while (producto.toUpperCase() != "NO") {
     switch (producto.toLowerCase()){
         case "zapatillas":
+            // compra = "zapatillas" + compra
             precioFinal = precioFinal + zapatillas;
             break;
         case "remera":
+            // compra = "remera" + compra
             precioFinal = precioFinal + remera;
             break;
         case "pantalon":
+            // compra = "pantalon" + compra
             precioFinal = precioFinal + pantalon;
             break;
         case "camisa":
+            // compra = "camisa" + compra
             precioFinal = precioFinal + camisa;
             break;
         default:
@@ -62,7 +67,8 @@ while (producto.toUpperCase() != "NO") {
     }
 
 }
-alert("el precio final de su compra es " + precioFinal)
+alert("El precio final de su compra es " + precioFinal)
+// console.log ("Total de " + precioFinal + " de ",  compra)
 
 
 
