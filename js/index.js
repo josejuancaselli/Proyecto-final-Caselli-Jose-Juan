@@ -9,9 +9,6 @@ function calculadora() {
     return (precioFinal * 1.48) / 6;
 }
 
-
-
-
 alert("¿Que producto esta buscando? Remera, Pantalon, Camisa o Zapatillas?")
 let producto = prompt("Ingrese el producto que esta buscando y le diremos su precio")
 
@@ -39,12 +36,13 @@ while (producto.toUpperCase() != "NO") {
     }
 }
 
-
 producto = prompt("Que producto desea llevar? Si quiere desistir de la compra, responda NO para salir")
 
 if (producto.toUpperCase() === "NO") {
     alert("Gracias por visitarnos!")
-} else if (producto.toUpperCase() != "NO") {
+}
+
+else if (producto.toUpperCase() != "NO") {
     while (producto.toUpperCase() != "NO") {
         switch (producto.toLowerCase()) {
             case "zapatillas":
@@ -67,11 +65,17 @@ if (producto.toUpperCase() === "NO") {
                 alert("El producto " + producto + " no se encuentra disponible");
                 break;
         }
-        producto = prompt("¿Busca algún otro producto? De lo contrario, responda NO para salir.")
+        producto = prompt("¿Busca algún otro producto? Escriba el nombre de lo que busca agregar, de lo contrario, responda NO para continuar al pago.")
     }
 
-    let cuotas = prompt("Desea pagar en 6 cuotas con un recargo del 48% sobre " + precioFinal + "? Conteste SI para pagar en cuotas, o no para continuar con el pago al contado")
+    let cuotas = prompt("Desea pagar en 6 cuotas con un recargo del 48% sobre " + precioFinal + "? Conteste SI para pagar en cuotas, NO para continuar con el pago al contado o SALIR para abandonar la compra")
 
+
+    while (cuotas.toUpperCase() !== "SI" && cuotas.toUpperCase() !== "NO" && cuotas.toUpperCase() !== "SALIR"){
+        alert("eso no es una respuesta correcta")
+        cuotas = prompt("Desea pagar en 6 cuotas con un recargo del 48% sobre " + precioFinal + "? Conteste SI para pagar en cuotas, NO para continuar con el pago al contado O SALIR para abandonar la compra")
+        
+    }
     if (cuotas.toUpperCase() === "SI") {
         alert("El costo final es de " + calculadora() + " por cuota.")
         alert("Gracias por comprar con nosotros!")
@@ -79,14 +83,17 @@ if (producto.toUpperCase() === "NO") {
     } else if (cuotas.toUpperCase() === "NO") {
         alert("Gracias por su compra, procederemos al pago ahora")
         let transferencia = parseInt(prompt("Escriba el monto exacto de " + precioFinal + " para realizar la transferencia"))
-
-        while (transferencia !== precioFinal){
-            transferencia = parseInt(prompt ("El monto ingresado es incorrecto. Por favor escriba " + precioFinal + " para terminar la transacción"))
+        while (transferencia !== precioFinal) {
+            transferencia = parseInt(prompt("El monto ingresado es incorrecto. Por favor escriba " + precioFinal + " para terminar la transacción"))
         }
         alert("Pago recibido. ¡Gracias por comprar con nosotros!")
         console.log("Total de " + precioFinal + " por", compra)
+    }else if (cuotas.toUpperCase() === "SALIR"){
+        alert("Gracias por visitarnos!")
     }
-} else {
+}
+
+else {
     alert("Eso no es una respuesta correcta")
 }
 
@@ -101,15 +108,6 @@ if (producto.toUpperCase() === "NO") {
 
 
 
-
-
-//
-// if (transferencia === precioFinal) {
-//     alert("Pago recibido. ¡Gracias por comprar con nosotros!")
-// } else {
-//     alert("Ese no es el monto correcto")
-// }
-// console.log("Total de " + precioFinal + " por", compra)
 
 
 
