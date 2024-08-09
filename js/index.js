@@ -5,47 +5,47 @@ const arrayRopa = [
     { id: 4, nombre: "camisas" }
 ]
 const arrayRemera = [
-    { id: 1, nombre: "vans ", precio: 15000 },
-    { id: 2, nombre: "adidas ", precio: 18000 },
-    { id: 3, nombre: "nike ", precio: 11000 },
-    { id: 4, nombre: "underarmor ", precio: 16000 }
+    { id: 1, nombre: "vans", precio: 15000, tipo: "remera" },
+    { id: 2, nombre: "adidas", precio: 18000, tipo: "remera" },
+    { id: 3, nombre: "nike", precio: 11000, tipo: "remera" },
+    { id: 4, nombre: "underarmor", precio: 16000, tipo: "remera" }
 ]
 
 const arrayPantalon =
-    [{ id: 1, nombre: "levis ", precio: 150000 },
-    { id: 2, nombre: "bolivia ", precio: 180000 },
-    { id: 3, nombre: "wrangler ", precio: 150000 }
+    [{ id: 1, nombre: "levis", precio: 150000, tipo: "jean" },
+    { id: 2, nombre: "bolivia", precio: 180000, tipo: "jean" },
+    { id: 3, nombre: "wrangler", precio: 150000, tipo: "jean" }
     ]
 
 const arrayCamisa =
-    [{ id: 1, nombre: "camisa manga corta ", precio: 70000 },
-    { id: 2, nombre: "camisa manga larga ", precio: 70000 },
-    { id: 3, nombre: "camisa hawaiana ", precio: 80000 },
-    { id: 4, nombre: "camisa de vestir ", precio: 95000 }
+    [{ id: 1, nombre: "camisa manga corta", precio: 70000, tipo: "camisa" },
+    { id: 2, nombre: "camisa manga larga", precio: 70000, tipo: "camisa" },
+    { id: 3, nombre: "camisa hawaiana", precio: 80000, tipo: "camisa" },
+    { id: 4, nombre: "camisa de vestir", precio: 95000, tipo: "camisa" }
     ]
 
 const arrayZapatillas =
-    [{ id: 1, nombre: "vans ", precio: 50000 },
-    { id: 2, nombre: "adidas ", precio: 90000 },
-    { id: 3, nombre: "nike ", precio: 60000 },
-    { id: 4, nombre: "topper ", precio: 20000 },
+    [{ id: 1, nombre: "vans", precio: 50000, tipo: "zapatillas" },
+    { id: 2, nombre: "adidas", precio: 90000, tipo: "zapatillas" },
+    { id: 3, nombre: "nike", precio: 60000, tipo: "zapatillas" },
+    { id: 4, nombre: "topper", precio: 20000, tipo: "zapatillas" },
     ]
 
 const obtenerNombres = (array) => array.map((producto) => producto.nombre).join(" || ");
 const tipoPrecio = (array) => array.map(producto => producto.id + ". " + producto.nombre).join(" || ");
-
-const ppp= []
-
-
+const compraFinal = (array) => array.map(producto => producto.tipo + " " + producto.nombre).join(", ")
 function calculadora() {
     return (precioFinal * 1.48) / 6;
 }
 
-let compra = " "
+const pf = []
+const compra = []
 let buscador
 let precio
 let marca
 
+
+////////////////////////////////////////////////***************************************************************************** */
 alert("Bienvenido a Ropa JavaScript")
 alert("Ingrese el producto que esta buscando")
 
@@ -216,20 +216,20 @@ else if (producto.toUpperCase() != "NO") {
                 marca = prompt("Indique con el numero correspondiente que zapatillas desea comprar: " + tipoPrecio(arrayZapatillas))
                 switch (marca.toLowerCase()) {
                     case "1":
-                        compra = compra + arrayZapatillas[0].nombre
-                        ppp.push(arrayZapatillas[0].precio)
+                        compra.push({ tipo: arrayZapatillas[0].tipo, nombre: arrayZapatillas[0].nombre })
+                        pf.push(arrayZapatillas[0].precio)
                         break;
                     case "2":
-                        compra = compra + arrayZapatillas[1].nombre
-                        ppp.push(arrayZapatillas[1].precio)
+                        compra.push({ tipo: arrayZapatillas[1].tipo, nombre: arrayZapatillas[1].nombre })
+                        pf.push(arrayZapatillas[1].precio)
                         break;
                     case "3":
-                        compra = compra + arrayZapatillas[2].nombre
-                        ppp.push(arrayZapatillas[2].precio)
+                        compra.push({ tipo: arrayZapatillas[2].tipo, nombre: arrayZapatillas[2].nombre })
+                        pf.push(arrayZapatillas[2].precio)
                         break;
                     case "4":
-                        compra = compra + arrayZapatillas[3].nombre
-                        ppp.push(arrayZapatillas[3].precio)
+                        compra.push({ tipo: arrayZapatillas[3].tipo, nombre: arrayZapatillas[3].nombre })
+                        pf.push(arrayZapatillas[3].precio)
                         break;
                     default:
                         alert("el numero ingresado es incorrecto")
@@ -242,20 +242,20 @@ else if (producto.toUpperCase() != "NO") {
                 marca = prompt("Indique con el numero correspondiente que remera desea comprar: " + tipoPrecio(arrayRemera))
                 switch (marca.toLowerCase()) {
                     case "1":
-                        compra = compra + arrayRemera[0].nombre
-                        ppp.push(arrayRemera[0].precio)
+                        compra.push({ tipo: arrayRemera[0].tipo, nombre: arrayRemera[0].nombre })
+                        pf.push(arrayRemera[0].precio)
                         break;
                     case "2":
-                        compra = compra + arrayRemera[1].nombre
-                        ppp.push(arrayRemera[1].precio)
+                        compra.push({ tipo: arrayRemera[1].tipo, nombre: arrayRemera[1].nombre })
+                        pf.push(arrayRemera[1].precio)
                         break;
                     case "3":
-                        compra = compra + arrayRemera[2].nombre
-                        ppp.push(arrayRemera[2].precio)
+                        compra.push({ tipo: arrayRemera[2].tipo, nombre: arrayRemera[2].nombre })
+                        pf.push(arrayRemera[2].precio)
                         break;
                     case "4":
-                        compra = compra + arrayRemera[3].nombre
-                        ppp.push(arrayRemera[3].precio)
+                        compra.push({ tipo: arrayRemera[3].tipo, nombre: arrayRemera[3].nombre })
+                        pf.push(arrayRemera[3].precio)
                         break;
                     default:
                         alert("el numero ingresado es incorrecto")
@@ -268,16 +268,16 @@ else if (producto.toUpperCase() != "NO") {
                 marca = prompt("Indique con el numero correspondiente que pantalon desea comprar: " + tipoPrecio(arrayPantalon))
                 switch (marca.toLowerCase()) {
                     case "1":
-                        compra = compra + arrayPantalon[0].nombre
-                        ppp.push(arrayPantalon[0].precio)
+                        compra.push({ tipo: arrayPantalon[0].tipo, nombre: arrayPantalon[0].nombre })
+                        pf.push(arrayPantalon[0].precio)
                         break;
                     case "2":
-                        compra = compra + arrayPantalon[1].nombre
-                        ppp.push(arrayPantalon[1].precio)
+                        compra.push({ tipo: arrayPantalon[1].tipo, nombre: arrayPantalon[1].nombre })
+                        pf.push(arrayPantalon[1].precio)
                         break;
                     case "3":
-                        compra = compra + arrayPantalon[2].nombre
-                        ppp.push(arrayPantalon[2].precio)
+                        compra.push({ tipo: arrayPantalon[2].tipo, nombre: arrayPantalon[2].nombre })
+                        pf.push(arrayPantalon[2].precio)
                         break;
                     default:
                         alert("el numero ingresado es incorrecto")
@@ -290,20 +290,20 @@ else if (producto.toUpperCase() != "NO") {
                 marca = prompt("Indique con el numero correspondiente que camisa desea comprar: " + tipoPrecio(arrayCamisa))
                 switch (marca.toLowerCase()) {
                     case "1":
-                        compra = compra + arrayCamisa[0].nombre
-                        ppp.push(arrayCamisa[0].precio)
+                        compra.push({ tipo: arrayCamisa[0].tipo, nombre: arrayCamisa[0].nombre })
+                        pf.push(arrayCamisa[0].precio)
                         break;
                     case "2":
-                        compra = compra + arrayCamisa[1].nombre
-                        ppp.push(arrayCamisa[1].precio)
+                        compra.push({ tipo: arrayCamisa[1].tipo, nombre: arrayCamisa[1].nombre })
+                        pf.push(arrayCamisa[1].precio)
                         break;
                     case "3":
-                        compra = compra + arrayCamisa[2].nombre
-                        ppp.push(arrayCamisa[2].precio)
+                        compra.push({ tipo: arrayCamisa[2].tipo, nombre: arrayCamisa[2].nombre })
+                        pf.push(arrayCamisa[2].precio)
                         break;
                     case "4":
-                        compra = compra + arrayCamisa[3].nombre
-                        ppp.push(arrayCamisa[3].precio)
+                        compra.push({ tipo: arrayCamisa[3].tipo, nombre: arrayCamisa[3].nombre })
+                        pf.push(arrayCamisa[3].precio)
                         break;
                     default:
                         alert("el numero ingresado es incorrecto")
@@ -314,14 +314,12 @@ else if (producto.toUpperCase() != "NO") {
                 alert("El producto " + producto + " no se encuentra disponible");
                 break;
         }
-        producto = prompt("¿Busca algún otro producto? Escriba el nombre de lo que busca agregar, de lo contrario, responda NO para continuar al pago.")
+        producto = prompt("¿Busca algún otro producto? Indique con un numero que producto desea agregar, de lo contrario, responda NO para continuar al pago: " + tipoPrecio(arrayRopa))
     }
 
-
-    function precioFinal (){
-        return ppp.reduce((acumulador, elemento) => acumulador + elemento + 0)
+    function precioFinal() {
+        return pf.reduce((acumulador, elemento) => acumulador + elemento + 0)
     }
-
 
     let cuotas = prompt("Desea pagar en 6 cuotas con un recargo del 48% sobre " + precioFinal() + "? Conteste SI para pagar en cuotas, NO para continuar con el pago al contado o SALIR para abandonar la compra")
 
@@ -343,7 +341,7 @@ else if (producto.toUpperCase() != "NO") {
             transferencia = parseInt(prompt("El monto ingresado es incorrecto. Por favor escriba " + total + " para terminar la transacción"))
         }
         alert("Pago recibido. ¡Gracias por comprar con nosotros!")
-        console.log("Total de " + total + " por", compra)
+        console.log("Total de " + total + " por", compraFinal(compra))
     } else if (cuotas.toUpperCase() === "SALIR") {
         alert("Gracias por visitarnos!")
     }
