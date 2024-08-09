@@ -331,7 +331,7 @@ else if (producto.toUpperCase() != "NO") {
     if (cuotas.toUpperCase() === "SI") {
         alert("El costo final es de " + calculadora() + " por cuota.")
         alert("Gracias por comprar con nosotros!")
-        console.log("Total de " + calculadora() * 6 + " por " + compra + " a pagar en 6 cuotas")
+        console.log("Total de " + calculadora() * 6 + " por " + compraFinal(compra) + " a pagar en 6 cuotas")
     } else if (cuotas.toUpperCase() === "NO") {
         alert("Gracias por su compra, procederemos al pago ahora")
 
