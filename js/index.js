@@ -343,6 +343,6 @@ else if (producto.toUpperCase() != "NO") {
         alert("Pago recibido. ¡Gracias por comprar con nosotros!")
         console.log("Total de " + total + " por", compraFinal(compra))
     } else if (cuotas.toUpperCase() === "SALIR") {
-        alert("Gracias por visitarnos!")
+        alert("Gracias por visitarnos!.")
     }
 }
