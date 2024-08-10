@@ -1,41 +1,51 @@
+class Producto {
+    constructor(id, nombre, precio, tipo) {
+        this.id = id;
+        this.nombre = nombre;
+        this.precio = precio;
+        this.tipo = tipo;
+    }
+}
+
 const arrayRopa = [
-    { id: 1, nombre: "zapatillas" },
-    { id: 2, nombre: "remeras" },
-    { id: 3, nombre: "pantalones" },
-    { id: 4, nombre: "camisas" }
-]
+    new Producto(1, "zapatillas", null, null),
+    new Producto(2, "remeras", null, null),
+    new Producto(3, "pantalones", null, null),
+    new Producto(4, "camisas", null, null)
+];
+
 const arrayRemera = [
-    { id: 1, nombre: "vans", precio: 15000, tipo: "remera" },
-    { id: 2, nombre: "adidas", precio: 18000, tipo: "remera" },
-    { id: 3, nombre: "nike", precio: 11000, tipo: "remera" },
-    { id: 4, nombre: "underarmor", precio: 16000, tipo: "remera" }
-]
+    new Producto(1, "vans", 15000, "remera"),
+    new Producto(2, "adidas", 18000, "remera"),
+    new Producto(3, "nike", 11000, "remera"),
+    new Producto(4, "underarmor", 16000, "remera")
+];
 
-const arrayPantalon =
-    [{ id: 1, nombre: "levis", precio: 150000, tipo: "jean" },
-    { id: 2, nombre: "bolivia", precio: 180000, tipo: "jean" },
-    { id: 3, nombre: "wrangler", precio: 150000, tipo: "jean" }
-    ]
+const arrayPantalon = [
+    new Producto(1, "levis", 150000, "jean"),
+    new Producto(2, "bolivia", 180000, "jean"),
+    new Producto(3, "wrangler", 150000, "jean")
+];
 
-const arrayCamisa =
-    [{ id: 1, nombre: "camisa manga corta", precio: 70000, tipo: "camisa" },
-    { id: 2, nombre: "camisa manga larga", precio: 70000, tipo: "camisa" },
-    { id: 3, nombre: "camisa hawaiana", precio: 80000, tipo: "camisa" },
-    { id: 4, nombre: "camisa de vestir", precio: 95000, tipo: "camisa" }
-    ]
+const arrayCamisa = [
+    new Producto(1, "manga corta", 70000, "camisa"),
+    new Producto(2, "manga larga", 70000, "camisa"),
+    new Producto(3, "hawaiana", 80000, "camisa"),
+    new Producto(4, "de vestir", 95000, "camisa")
+];
 
-const arrayZapatillas =
-    [{ id: 1, nombre: "vans", precio: 50000, tipo: "zapatillas" },
-    { id: 2, nombre: "adidas", precio: 90000, tipo: "zapatillas" },
-    { id: 3, nombre: "nike", precio: 60000, tipo: "zapatillas" },
-    { id: 4, nombre: "topper", precio: 20000, tipo: "zapatillas" },
-    ]
+const arrayZapatillas = [
+    new Producto(1, "vans", 50000, "zapatillas"),
+    new Producto(2, "adidas", 90000, "zapatillas"),
+    new Producto(3, "nike", 60000, "zapatillas"),
+    new Producto(4, "topper", 20000, "zapatillas")
+];
 
 const obtenerNombres = (array) => array.map((producto) => producto.nombre).join(" || ");
 const tipoPrecio = (array) => array.map(producto => producto.id + ". " + producto.nombre).join(" || ");
 const compraFinal = (array) => array.map(producto => producto.tipo + " " + producto.nombre).join(", ")
 function calculadora() {
-    return (precioFinal * 1.48) / 6;
+    return (precioFinal() * 1.48) / 6;
 }
 
 const pf = []
