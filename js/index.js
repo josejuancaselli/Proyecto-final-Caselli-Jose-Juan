@@ -24,7 +24,9 @@ const remeras = arrayProductos.filter((el) => el.tipo === 'Remera')
 const pantalones = arrayProductos.filter((el) => el.tipo === 'Pantalon')
 const camisas = arrayProductos.filter((el) => el.tipo === 'Camisa')
 const zapatillas = arrayProductos.filter((el) => el.tipo === 'Zapatillas')
-let carrito = JSON.parse(localStorage.getItem("Cart")) || []
+let carritoVacio = JSON.parse(localStorage.getItem("Cart")) || []
+
+
 //////////................
 
 // FUNCIONES
@@ -45,15 +47,16 @@ function crearProducto(producto, dom) {
 
     botonCarrito.addEventListener ("click", ()=> {
         const product = producto
-        carrito.push ({
+        carritoVacio.push ({
             id: product.id,
             nombre: product.nombre,
             precio: product.precio,
             tipo: product.tipo
         })
-        localStorage.setItem("Cart", JSON.stringify(carrito));
-        
+        localStorage.setItem("Cart", JSON.stringify(carritoVacio));
+
     })
+
 
 }
 
