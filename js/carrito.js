@@ -1,10 +1,15 @@
 let carrito = JSON.parse(localStorage.getItem("Cart")) || []
 const carritoMain = document.getElementById("main-carrito")
 
-let  precioFinal = document.createElement("p")
-precioFinal.innerText = `Su saldo a pagar es de $${carrito.reduce((a,b)=> a + b.precio, 0).toLocaleString('es-ES')}`;
-carritoMain.appendChild(precioFinal)
-console.log(precioFinal)
+let  precioFinal = document.createElement("p")// creo un parrafo
+carritoMain.appendChild(precioFinal)// lo imprimo en la web
+
+
+function carritoFinal (){
+    precioFinal.innerText = `Su saldo a pagar es de $${carrito.reduce((a,b)=> a + b.precio, 0).toLocaleString('es-ES')}`;// funcion para rellenar el parrafo dinamicamente con el precio del carrito
+}
+
+carritoFinal () //relleno el parrafo con la function
 
 carrito.forEach((producto) => {
     const tituloProducto = document.createElement("h3") //creo el subtitulo
@@ -24,12 +29,12 @@ carrito.forEach((producto) => {
             carrito.splice(index, 1); // ahora le digo que borre el index n° igual a la variable index, justamente porque van a coincidir
             localStorage.setItem("Cart", JSON.stringify(carrito)); //por ultimo actualizo el storage con el nuevo array sin ese objeto
 
-            tituloProducto.remove()
-            precioProducto.remove()
-            botonCarrito.remove()
+            tituloProducto.remove()//borro el DOM
+            precioProducto.remove()//borro el DOM
+            botonCarrito.remove()//borro el DOM
+            
 
-            console.log(precioFinal)
-            precioFinal.innerText = `Su saldo a pagar es de $${carrito.reduce((a,b)=> a + b.precio, 0).toLocaleString('es-ES')}`;
+            carritoFinal () //actualizo el precio del carrito
         }
     })
 });
