@@ -6,7 +6,8 @@ carritoMain.appendChild(precioFinal)// lo imprimo en la web
 
 
 function carritoFinal (){
-    precioFinal.innerText = `Su saldo a pagar es de $${carrito.reduce((a,b)=> a + b.precio, 0).toLocaleString('es-ES')}`;// funcion para rellenar el parrafo dinamicamente con el precio del carrito
+    let total = carrito.reduce((a,b)=> a + b.precio, 0).toLocaleString('es-ES')
+    precioFinal.innerText = `Su saldo a pagar es de $${total}`;// funcion para rellenar el parrafo dinamicamente con el precio del carrito
 }
 
 carritoFinal () //relleno el parrafo con la function
