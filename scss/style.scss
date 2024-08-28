@@ -1,4 +1,5 @@
 @import "carrito";
+@import "footer";
 
 * {
     padding: 0;
@@ -16,7 +17,10 @@ html {
     font-size: 62.5%;
 
     body {
+        position: relative;
+        min-height: 100vh;
         background-color: rgb(116, 145, 126);
+        padding-bottom: 5rem;
 
         nav {
             background-color: lightgrey;
@@ -26,13 +30,23 @@ html {
             align-items: center;
 
             ul {
+                
                 display: flex;
                 list-style: none;
                 justify-content: flex-end;
                 width: 100%;
 
                 li {
+                    
                     margin: 10px;
+                    a{
+                        text-decoration: none;
+                        color: black;
+                        
+                    }
+                    a:hover{
+                        color: aliceblue;
+                    }
                 }
 
                 .inicio-nav {
@@ -50,15 +64,36 @@ html {
                 display: flex;
             }
 
+            #remeras-index {
+                background-color: rgb(149 180 160);
+            }
+
+            #pantalones-index {
+                background-color: rgb(130 176 147);
+            }
+
+            #camisas-index {
+                background-color: rgb(96 163 120);
+            }
+
+            #zapatillas-index {
+                background-color: rgb(76 134 97);
+            }
+
             div {
-                
+                margin-top: 2rem;
+                margin-bottom: 2rem;
+                padding: 0 2rem;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
                 h2 {
                     font-size: 4rem;
                     margin: 1rem;
-                    
+
                 }
 
                 .div-producto {
+                    
                     display: flex;
                     flex-direction: column;
                     margin: 5rem 0;
@@ -90,6 +125,11 @@ html {
                         border-radius: 5px;
                         width: 100%;
                         font-weight: bold;
+                    }
+
+                    button:active {
+                        background-color: rgba(130, 149, 202, 0.63);
+                        
                     }
                 }
             }
