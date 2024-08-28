@@ -1,0 +1,98 @@
+@import "carrito";
+
+* {
+    padding: 0;
+    margin: 0 auto;
+    width: auto;
+
+    max-width: 198rem;
+    font-family: "Roboto Condensed", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+html {
+    font-size: 62.5%;
+
+    body {
+        background-color: rgb(116, 145, 126);
+
+        nav {
+            background-color: lightgrey;
+            font-size: 2.5rem;
+            display: flex;
+            height: 7vh;
+            align-items: center;
+
+            ul {
+                display: flex;
+                list-style: none;
+                justify-content: flex-end;
+                width: 100%;
+
+                li {
+                    margin: 10px;
+                }
+
+                .inicio-nav {
+                    margin: 1rem 110rem 0 0;
+                }
+
+                .carrito-nav {
+                    margin: 1rem 5rem 0 10rem;
+                }
+            }
+        }
+
+        #main-index {
+            #prod-index {
+                display: flex;
+            }
+
+            div {
+                
+                h2 {
+                    font-size: 4rem;
+                    margin: 1rem;
+                    
+                }
+
+                .div-producto {
+                    display: flex;
+                    flex-direction: column;
+                    margin: 5rem 0;
+                    border: 2px solid #ccc;
+                    border-radius: 10px;
+                    padding: 1.5rem;
+                    background-color: rgba(101, 155, 121, 0.596);
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                    transition: transform 0.2s;
+                    align-items: center;
+
+                    h3 {
+                        margin: 0.5rem;
+                        font-size: 3.3rem;
+                    }
+
+                    p {
+                        margin: 0.5rem;
+                        font-size: 2.3rem;
+                    }
+
+                    button {
+                        margin: 0.5rem;
+                        background-color: rgba(74, 109, 206, 0.63);
+                        border: 1px solid rgba(36, 53, 100, 0.63);
+                        color: #333;
+                        padding: 10px;
+                        cursor: pointer;
+                        border-radius: 5px;
+                        width: 100%;
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+    }
+}

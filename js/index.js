@@ -24,6 +24,8 @@ const remeras = arrayProductos.filter((el) => el.tipo === 'Remera')
 const pantalones = arrayProductos.filter((el) => el.tipo === 'Pantalon')
 const camisas = arrayProductos.filter((el) => el.tipo === 'Camisa')
 const zapatillas = arrayProductos.filter((el) => el.tipo === 'Zapatillas')
+
+
 let carritoVacio = JSON.parse(localStorage.getItem("Cart")) || []
 
 
@@ -33,17 +35,21 @@ let carritoVacio = JSON.parse(localStorage.getItem("Cart")) || []
 
 
 function crearProducto(producto, dom) {
+    const divProducto = document.createElement("div")
+    divProducto.className = ("div-producto")
+    dom.appendChild(divProducto)
+
     const tituloProducto = document.createElement("h3") //creo el subtitulo
     tituloProducto.innerText = `${producto.nombre}` // le doy texto al subtitulo
-    dom.appendChild(tituloProducto) //imprimo el titulo en la web
+    divProducto.appendChild(tituloProducto) //imprimo el titulo en la web
 
     const precioProducto = document.createElement("p") // creo el parrafo del precio
     precioProducto.innerText = `$${producto.precio.toLocaleString('es-ES')}` //le doy texto al parrafo de precio
-    dom.appendChild(precioProducto)// imprimo el parrafo en la web
+    divProducto.appendChild(precioProducto)// imprimo el parrafo en la web
 
     let botonCarrito = document.createElement("button") // creo el boton del carrito
     botonCarrito.innerText = "Agregar al carrito" //le doy texto al boton
-    dom.appendChild(botonCarrito)// imprimo el boton en la web
+    divProducto.appendChild(botonCarrito)// imprimo el boton en la web
 
     botonCarrito.addEventListener ("click", ()=> {
         const product = producto

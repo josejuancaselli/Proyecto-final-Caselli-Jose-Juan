@@ -3,6 +3,7 @@ const carritoMain = document.getElementById("main-carrito")
 
 
 let precioFinal = document.createElement("p")// creo un parrafo
+precioFinal.id ="precio-final"
 const carritoDiv = document.getElementById("carritoDiv")
 carritoMain.appendChild(precioFinal)// lo imprimo en la web
 
@@ -16,7 +17,7 @@ carritoFinal() //relleno el parrafo con la function
 
 carrito.forEach((producto) => {
     const divProducto = document.createElement("div")
-    divProducto.className = ("div-producto")
+    divProducto.className = ("div-producto-carrito")
     carritoDiv.appendChild(divProducto)
 
     const tituloProducto = document.createElement("h3") //creo el subtitulo
@@ -36,6 +37,7 @@ carrito.forEach((producto) => {
             carrito.splice(index, 1); // ahora le digo que borre el index n° igual a la variable index, justamente porque van a coincidir
             localStorage.setItem("Cart", JSON.stringify(carrito)); //por ultimo actualizo el storage con el nuevo array sin ese objeto
 
+            divProducto.remove()
             tituloProducto.remove()//borro el DOM
             precioProducto.remove()//borro el DOM
             botonCarrito.remove()//borro el DOM
