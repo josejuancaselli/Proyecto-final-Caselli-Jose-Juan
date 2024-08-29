@@ -30,9 +30,11 @@ carrito.forEach((producto) => {
 
     let botonCarrito = document.createElement("button") // creo el boton del carrito
     botonCarrito.innerText = "Eliminar" //le doy texto al boton
+    botonCarrito.className = "boton-carrito"
     divProducto.appendChild(botonCarrito)// imprimo el boton en la web
     botonCarrito.addEventListener("click", () => {
         const index = carrito.findIndex(objeto => objeto.id === producto.id); // guardo el index del objeto del array, haciendole coincidir el id del objeto con el id del objeto que va iterando en el forEach
+            
         if (index >= 0) {// como index ahora es un numero puedo compararlo. Le digo si es mayor o igual a 0 porque los index de los arrays arrancan en 0 hacia numeros positivos
             carrito.splice(index, 1); // ahora le digo que borre el index n° igual a la variable index, justamente porque van a coincidir
             localStorage.setItem("Cart", JSON.stringify(carrito)); //por ultimo actualizo el storage con el nuevo array sin ese objeto

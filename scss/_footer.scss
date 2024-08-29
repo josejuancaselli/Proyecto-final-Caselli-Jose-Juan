@@ -4,4 +4,10 @@
     position: absolute;
     bottom: 0;
     width: 100%;
+    
+    p{
+        display: flex;
+        justify-content: flex-end;
+        padding: 0.6rem;
+    }
 }
