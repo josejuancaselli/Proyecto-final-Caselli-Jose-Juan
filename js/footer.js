@@ -1,60 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="./css/index.css">
-    <title>Document</title>
-</head>
-
-<body id="inicio">
-    <div>
-    <header id="header">
-
-    </header>
-
-    <main id="main-index">
-
-        <div class="wrapper">
-            <div class="tarjeta">
-                <img src="./assets/1597780129-768649-depositphotos-13735339-xl-2015jpg.avif" alt="foto hombre">
-                <div class="info">
-                    <h3>Ropa masculina</h3>
-                    <p>Encuentra estilo y confort en nuestra exclusiva colección de ropa masculina. Calidad y diseño
-                        para
-                        cada ocasión</p>
-                    <a href="./pages/masculina/camisas.html" class="ropa_masculina">Camisas</a>
-                    <a href="./pages/masculina/pantalon.html" class="ropa_masculina">Pantalon</a>
-                    <a href="./pages/masculina/remeras.html" class="ropa_masculina">Remeras</a>
-                    <a href="./pages/masculina/zapatillas.html" class="ropa_masculina">Zapatillas</a>
-                </div>
-            </div>
-
-            <div class="tarjeta">
-                <img src="./assets/mujer.jpg" alt="foto mujer">
-                <div class="info">
-                    <h3>Ropa femenina</h3>
-                    <p>Descubre nuestra moda femenina, diseñada para realzar tu estilo con elegancia y comodidad en cada
-                        prenda</p>
-                    <a href="./pages/femenina/vestidos.html" class="ropa_femenina">Vestidos</a>
-                    <a href="./pages/femenina/polleras.html" class="ropa_femenina">Polleras</a>
-                    <a href="/pages/femenina/musculosas.html" class="ropa_femenina">Musculosas</a>
-                    <a href="./pages/femenina/zapatillas_mujer.html" class="ropa_femenina">Zapatillas</a>
-                </div>
-
-            </div>
-        </div>
-        <div id="cards">
-
-        </div>
-    </main>
-
-    <footer id="footer">
-        
-        <ul>
+const footer = document.getElementById("footer")
+const navFooter = document.createElement("nav")
+navFooter.className = ("nav-footer")
+navFooter.innerHTML = `
+        <div class="container-fluid">
+            <ul>
             <li><a href="index.html">Inicio</a></li>
             <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                     class="bi bi-instagram" viewBox="0 0 16 16">
@@ -73,14 +22,6 @@
                 </svg></li>
             <li>Contacto</li>
         </ul>
-    </footer>
-</div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-        </script>
-        
-    <script src="js/navbar.js"></script>
-    <script src="js/index.js"></script>
-</body>
-
-</html>
+        </div>
+`
+footer.appendChild(navFooter)

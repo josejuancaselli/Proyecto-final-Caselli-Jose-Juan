@@ -279,7 +279,37 @@
         "marca": "Hailys Denis",
         "precio": 120000,
         "categoria": "vestidos",
-        "imagen": "https://image-cdn.army-shop.si/fit-in/800x800/public/img/p/3826/40639427871071.jpg"
+        "imagen": "/assets/mujer/vestidos/vestido_verano_azul.webp"
+    },
+    {
+        "id": 29,
+        "nombre": "Vestido",
+        "tipo": "Largo con Flores",
+        "color": "Naranja",
+        "marca": "Gibobby",
+        "precio": 170000,
+        "categoria": "vestidos",
+        "imagen": "/assets/mujer/vestidos/vestido_largo_flores.jpeg"
+    },
+    {
+        "id": 30,
+        "nombre": "Vestido",
+        "tipo": "Largo de Jean",
+        "color": "Celeste",
+        "marca": "Philosophy",
+        "precio": 208000,
+        "categoria": "vestidos",
+        "imagen": "https://resources.sanborns.com.mx/imagenes-sanborns-ii/1200/7500563947291.jpg?scale=700&qlty=80"
+    },
+    {
+        "id": 31,
+        "nombre": "Vestido",
+        "tipo": "Simple",
+        "color": "Rojo",
+        "marca": "Maria Cher",
+        "precio": 153000,
+        "categoria": "vestidos",
+        "imagen": "/assets/mujer/vestidos/vestidorojo.webp"
     }
 ]
 
