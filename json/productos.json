@@ -270,6 +270,16 @@
         "precio": 20000,
         "categoria": "zapatillas_mujer",
         "imagen": "https://http2.mlstatic.com/D_NQ_NP_756631-MLA52199215707_102022-O.webp"
+    },
+    {
+        "id": 28,
+        "nombre": "Vestido",
+        "tipo": "Verano",
+        "color": "Azul Oscuro",
+        "marca": "Hailys Denis",
+        "precio": 120000,
+        "categoria": "vestidos",
+        "imagen": "https://image-cdn.army-shop.si/fit-in/800x800/public/img/p/3826/40639427871071.jpg"
     }
 ]
 

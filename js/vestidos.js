@@ -65,13 +65,13 @@ const crearProductos = async () => {
                 color: producto.color,
                 precio: producto.precio,
             })
-            Swal.fire({
-                position: "center",
-                icon: "success",
-                title: `Producto agregado`,
-                showConfirmButton: false,
-                timer: 800
-            });
+            Toastify({
+
+                text: `Se agregó ${producto.nombre} ${producto.color} ${producto.marca}`,
+                
+                duration: 3000
+                
+                }).showToast();
 
             localStorage.setItem("Carro", JSON.stringify(carritoVacio));
             MostrarCarrito(producto)
