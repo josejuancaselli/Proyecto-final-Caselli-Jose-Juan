@@ -1,0 +1,7 @@
+#productos-carrito{
+    display: flex;
+    flex-direction: column;
+}
+.div-producto-carrito{
+    background-color: aqua;
+}

@@ -8,15 +8,15 @@ carrito.forEach((producto) => {
 
     const titulo = document.createElement("h2"); //titulo para el producto
     titulo.innerText = `${producto.marca}: ${producto.nombre} ${producto.color}`;
-    productosCarrito.appendChild(titulo);
+    divProducto.appendChild(titulo);
 
     const precioProducto = document.createElement("p"); //precio para el producto
     precioProducto.innerText = `Precio: $${producto.precio}`;
-    productosCarrito.appendChild(precioProducto);
+    divProducto.appendChild(precioProducto);
 
     const eliminarProducto = document.createElement("button"); //boton para eliminar producto
     eliminarProducto.innerText = "Eliminar";
-    productosCarrito.appendChild(eliminarProducto);
+    divProducto.appendChild(eliminarProducto);
 
     eliminarProducto.addEventListener("click", () => {
         const index = carrito.findIndex((objeto) => objeto.id === producto.id); // guardo el index del objeto del array, haciendole coincidir el id del objeto con el id del objeto que va iterando en el forEach
