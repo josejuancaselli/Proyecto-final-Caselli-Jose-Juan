@@ -35,7 +35,7 @@ const crearProductos = async (categoria) => {
     const datos = await respuesta.json();
     let arrayProductos = datos
     const cardProducto = arrayProductos.filter((el) => el.categoria === categoria || el.genero === categoria)
-    console.log(cardProducto)
+    
     cardProducto.forEach(item => {
         let tarjetas = document.createElement("div")
         tarjetas.innerHTML = `
@@ -112,9 +112,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }else if (window.location.pathname.includes("zapa_mujer")) {
         categoria = "zapa_mujer";
     }else if (window.location.pathname.includes("ropa_femenina")) {
-        categoria = "ropa_femenina";
+        categoria = "mujer";
     }else if (window.location.pathname.includes("ropa_masculina")) {
-        categoria = "ropa_masculina";
+        categoria = "hombre";
     }
     
     crearProductos(categoria);
