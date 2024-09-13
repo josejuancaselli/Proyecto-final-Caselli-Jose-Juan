@@ -51,7 +51,7 @@ const crearProductos = async () => {
     const respuesta = await fetch("/json/productos.json");
     const datos = await respuesta.json();
     arrayProductos = datos
-    const ropaMujer = arrayProductos.filter((el) => el.genero === "hombre")
+    const ropaMujer = arrayProductos.filter((el) => el.genero === "mujer")
     ropaMujer.forEach(item => {
         let tarjetas = document.createElement("div")
         tarjetas.innerHTML = `

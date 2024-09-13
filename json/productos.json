@@ -1,6 +1,7 @@
 [
     {
         "id": 1,
+        "genero":"hombre",
         "nombre": "Remera",
         "tipo": "manga corta",
         "color": "Roja",
@@ -11,6 +12,7 @@
     },
     {
         "id": 2,
+        "genero":"hombre",
         "nombre": "Remera",
         "tipo": "manga corta",
         "color": "Azul",
@@ -21,6 +23,7 @@
     },
     {
         "id": 3,
+        "genero":"hombre",
         "nombre": "Remera",
         "tipo": "manga corta",
         "color": "Negra",
@@ -31,6 +34,7 @@
     },
     {
         "id": 4,
+        "genero":"hombre",
         "nombre": "Remera",
         "tipo": "manga corta",
         "color": "Verde",
@@ -41,6 +45,7 @@
     },
     {
         "id": 5,
+        "genero":"hombre",
         "nombre": "Jean",
         "tipo": "",
         "color": "Azul",
@@ -51,6 +56,7 @@
     },
     {
         "id": 6,
+        "genero":"hombre",
         "nombre": "Jean",
         "tipo": "",
         "color": "Azul",
@@ -61,6 +67,7 @@
     },
     {
         "id": 7,
+        "genero":"hombre",
         "nombre": "Jean",
         "tipo": "",
         "color": "Azul",
@@ -71,6 +78,7 @@
     },
     {
         "id": 8,
+        "genero":"hombre",
         "nombre": "Zapatillas",
         "tipo": "de Lona",
         "color": "Blancas",
@@ -81,6 +89,7 @@
     },
     {
         "id": 9,
+        "genero":"hombre",
         "nombre": "Botitas",
         "tipo": "de Lona",
         "color": "Negras",
@@ -91,6 +100,7 @@
     },
     {
         "id": 10,
+        "genero":"hombre",
         "nombre": "Zapatillas",
         "tipo": "Running",
         "color": "Negras",
@@ -101,6 +111,7 @@
     },
     {
         "id": 11,
+        "genero":"hombre",
         "nombre": "Borcegos",
         "tipo": "",
         "color": "Marrón Claro",
@@ -111,6 +122,7 @@
     },
     {
         "id": 12,
+        "genero":"hombre",
         "nombre": "Camisa",
         "tipo": "Manga Corta",
         "color": "Roja y Azul",
@@ -121,6 +133,7 @@
     },
     {
         "id": 13,
+        "genero":"hombre",
         "nombre": "Camisa",
         "tipo": "Manga Larga",
         "color": "Azul Oscuro",
@@ -131,6 +144,7 @@
     },
     {
         "id": 14,
+        "genero":"hombre",
         "nombre": "Camisa",
         "tipo": "Hawaiana",
         "color": "Celeste",
@@ -141,6 +155,7 @@
     },
     {
         "id": 15,
+        "genero":"hombre",
         "nombre": "Camisa",
         "tipo": "Escosesa",
         "color": "Roja",
@@ -151,6 +166,7 @@
     },
     {
         "id": 16,
+        "genero":"mujer",
         "nombre": "Musculosa",
         "tipo": "",
         "color": "Verde",
@@ -161,6 +177,7 @@
     },
     {
         "id": 17,
+        "genero":"mujer",
         "nombre": "Musculosa",
         "tipo": "",
         "color": "Azul",
@@ -171,6 +188,7 @@
     },
     {
         "id": 18,
+        "genero":"mujer",
         "nombre": "Musculosa",
         "tipo": "",
         "color": "Rosa",
@@ -181,6 +199,7 @@
     },
     {
         "id": 19,
+        "genero":"mujer",
         "nombre": "Musculosa",
         "tipo": "",
         "color": "Gris",
@@ -192,6 +211,7 @@
 
     {
         "id": 20,
+        "genero":"mujer",
         "nombre": "Pollera",
         "tipo": "Cuero",
         "color": "Negra",
@@ -202,6 +222,7 @@
     },
     {
         "id": 21,
+        "genero":"mujer",
         "nombre": "Pollera",
         "tipo": "Denim",
         "color": "Gris Oscuro",
@@ -212,6 +233,7 @@
     },
     {
         "id": 22,
+        "genero":"mujer",
         "nombre": "Pollera",
         "tipo": "Lanilla Lisa",
         "color": "Roja",
@@ -222,6 +244,7 @@
     },
     {
         "id": 23,
+        "genero":"mujer",
         "nombre": "Pollera",
         "tipo": "Plato",
         "color": "Negra",
@@ -233,6 +256,7 @@
 
     {
         "id": 24,
+        "genero":"mujer",
         "nombre": "Zapatillas",
         "tipo": "",
         "color": "Rosa",
@@ -243,6 +267,7 @@
     },
     {
         "id": 25,
+        "genero":"mujer",
         "nombre": "Zapatillas",
         "tipo": "Running",
         "color": "Verde",
@@ -253,6 +278,7 @@
     },
     {
         "id": 26,
+        "genero":"mujer",
         "nombre": "Zapatillas",
         "tipo": "",
         "color": "Coral",
@@ -263,6 +289,7 @@
     },
     {
         "id": 27,
+        "genero":"mujer",
         "nombre": "Sandalias",
         "tipo": "Cuero y Tachas",
         "color": "Negras",
@@ -273,6 +300,7 @@
     },
     {
         "id": 28,
+        "genero":"mujer",
         "nombre": "Vestido",
         "tipo": "Verano",
         "color": "Azul Oscuro",
@@ -283,6 +311,7 @@
     },
     {
         "id": 29,
+        "genero":"mujer",
         "nombre": "Vestido",
         "tipo": "Largo con Flores",
         "color": "Naranja",
@@ -293,6 +322,7 @@
     },
     {
         "id": 30,
+        "genero":"mujer",
         "nombre": "Vestido",
         "tipo": "Largo de Jean",
         "color": "Celeste",
@@ -303,6 +333,7 @@
     },
     {
         "id": 31,
+        "genero":"mujer",
         "nombre": "Vestido",
         "tipo": "Simple",
         "color": "Rojo",
