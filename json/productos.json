@@ -68,6 +68,18 @@
     {
         "id": 7,
         "genero":"hombre",
+        "nombre": "Pantalón",
+        "tipo": "Gabardina",
+        "color": "Violeta",
+        "marca": "Bolivia",
+        "precio": 121000,
+        "categoria": "pantalon",
+        "imagen": "https://http2.mlstatic.com/D_NQ_NP_700605-MLA50694653699_072022-O.webp"
+    },
+    
+    {
+        "id": 8,
+        "genero":"hombre",
         "nombre": "Jean",
         "tipo": "",
         "color": "Azul",
@@ -77,7 +89,7 @@
         "imagen": "https://http2.mlstatic.com/D_NQ_NP_666616-MLA76578173597_052024-O.webp"
     },
     {
-        "id": 8,
+        "id": 9,
         "genero":"hombre",
         "nombre": "Zapatillas",
         "tipo": "de Lona",
@@ -88,7 +100,7 @@
         "imagen": "https://media2.solodeportes.com.ar/media/catalog/product/cache/7c4f9b393f0b8cb75f2b74fe5e9e52aa/z/a/zapatilla-topper-nova-low-blanca-800010083300001-1.jpg"
     },
     {
-        "id": 9,
+        "id": 10,
         "genero":"hombre",
         "nombre": "Botitas",
         "tipo": "de Lona",
@@ -99,7 +111,7 @@
         "imagen": "https://http2.mlstatic.com/D_NQ_NP_971006-MLA49317258400_032022-O.webp"
     },
     {
-        "id": 10,
+        "id": 11,
         "genero":"hombre",
         "nombre": "Zapatillas",
         "tipo": "Running",
@@ -110,7 +122,7 @@
         "imagen": "https://media2.solodeportes.com.ar/media/catalog/product/cache/7c4f9b393f0b8cb75f2b74fe5e9e52aa/z/a/zapatillas-running-nike-revolution-6-next-nature-mujer-negra--510010dc3729003-1.jpg"
     },
     {
-        "id": 11,
+        "id": 12,
         "genero":"hombre",
         "nombre": "Borcegos",
         "tipo": "",
@@ -121,7 +133,7 @@
         "imagen": "https://http2.mlstatic.com/D_NQ_NP_805768-MLA53970858425_022023-O.webp"
     },
     {
-        "id": 12,
+        "id": 13,
         "genero":"hombre",
         "nombre": "Camisa",
         "tipo": "Manga Corta",
@@ -132,7 +144,7 @@
         "imagen": "https://ropaaeropostalegdl.wordpress.com/wp-content/uploads/2012/10/c10-tallas-mlxl.jpg?w=2000&h="
     },
     {
-        "id": 13,
+        "id": 14,
         "genero":"hombre",
         "nombre": "Camisa",
         "tipo": "Manga Larga",
@@ -143,7 +155,7 @@
         "imagen": "https://m.media-amazon.com/images/I/21D3RJ0UetL._AC_.jpg"
     },
     {
-        "id": 14,
+        "id": 15,
         "genero":"hombre",
         "nombre": "Camisa",
         "tipo": "Hawaiana",
@@ -154,7 +166,7 @@
         "imagen": "https://eluney.shop/wp-content/uploads/2022/04/Camisa-celeste-01-1.jpg"
     },
     {
-        "id": 15,
+        "id": 16,
         "genero":"hombre",
         "nombre": "Camisa",
         "tipo": "Escosesa",
@@ -165,7 +177,7 @@
         "imagen": "https://dcdn.mitiendanube.com/stores/001/162/180/products/2232107008_41_11-c35ebbd55cc20082ff16902096970373-1024-1024.webp"
     },
     {
-        "id": 16,
+        "id": 17,
         "genero":"mujer",
         "nombre": "Musculosa",
         "tipo": "",
@@ -176,7 +188,7 @@
         "imagen": "https://sporting.vtexassets.com/arquivos/ids/1378859-1200-1200?v=638584724269300000&width=1200&height=1200&aspect=true"
     },
     {
-        "id": 17,
+        "id": 18,
         "genero":"mujer",
         "nombre": "Musculosa",
         "tipo": "",
@@ -187,7 +199,7 @@
         "imagen": "https://media2.solodeportes.com.ar/media/catalog/product/cache/7c4f9b393f0b8cb75f2b74fe5e9e52aa/m/u/musculosa-nike-de-entrenamiento-one-mujer-azul-510020dd0636457-1.jpg"
     },
     {
-        "id": 18,
+        "id": 19,
         "genero":"mujer",
         "nombre": "Musculosa",
         "tipo": "",
@@ -198,7 +210,7 @@
         "imagen": "https://sportotalar.vtexassets.com/arquivos/ids/488964-1600-1600?v=638411906299570000&width=1600&height=1600&aspect=true"
     },
     {
-        "id": 19,
+        "id": 20,
         "genero":"mujer",
         "nombre": "Musculosa",
         "tipo": "",
@@ -210,7 +222,7 @@
     },
 
     {
-        "id": 20,
+        "id": 21,
         "genero":"mujer",
         "nombre": "Pollera",
         "tipo": "Cuero",
@@ -221,7 +233,7 @@
         "imagen": "https://dorianargentina.com/wp-content/uploads/2023/09/Paris-Negro-Frente.jpg"
     },
     {
-        "id": 21,
+        "id": 22,
         "genero":"mujer",
         "nombre": "Pollera",
         "tipo": "Denim",
@@ -232,7 +244,7 @@
         "imagen": "https://http2.mlstatic.com/D_NQ_NP_642044-MLA78673837943_082024-O.webp"
     },
     {
-        "id": 22,
+        "id": 23,
         "genero":"mujer",
         "nombre": "Pollera",
         "tipo": "Lanilla Lisa",
@@ -243,7 +255,7 @@
         "imagen": "https://dcdn.mitiendanube.com/stores/001/953/751/products/pollera-lanilla-coral-dama1-eeb74120c22012001816886487883493-640-0.webp"
     },
     {
-        "id": 23,
+        "id": 24,
         "genero":"mujer",
         "nombre": "Pollera",
         "tipo": "Plato",
@@ -255,51 +267,51 @@
     },
 
     {
-        "id": 24,
+        "id": 25,
         "genero":"mujer",
         "nombre": "Zapatillas",
         "tipo": "",
         "color": "Rosa",
         "marca": "Nike",
         "precio": 144000,
-        "categoria": "zapatillas_mujer",
+        "categoria": "zapa_mujer",
         "imagen": "/assets/mujer/zapatillas/zapatillas_rosa.jpg"
     },
     {
-        "id": 25,
+        "id": 26,
         "genero":"mujer",
         "nombre": "Zapatillas",
         "tipo": "Running",
         "color": "Verde",
         "marca": "Puma",
         "precio": 72000,
-        "categoria": "zapatillas_mujer",
+        "categoria": "zapa_mujer",
         "imagen": "https://images.puma.net/images/310055/01/sv01/fnd/ARG/"
     },
     {
-        "id": 26,
+        "id": 27,
         "genero":"mujer",
         "nombre": "Zapatillas",
         "tipo": "",
         "color": "Coral",
         "marca": "Adidas",
         "precio": 89000,
-        "categoria": "zapatillas_mujer",
+        "categoria": "zapa_mujer",
         "imagen": "https://www.stockcenter.com.ar/on/demandware.static/-/Sites-365-dabra-catalog/default/dwde18108c/products/ADID7093/ADID7093-6.JPG"
     },
     {
-        "id": 27,
+        "id": 28,
         "genero":"mujer",
         "nombre": "Sandalias",
         "tipo": "Cuero y Tachas",
         "color": "Negras",
         "marca": "33 Design",
         "precio": 52000,
-        "categoria": "zapatillas_mujer",
+        "categoria": "zapa_mujer",
         "imagen": "https://http2.mlstatic.com/D_NQ_NP_756631-MLA52199215707_102022-O.webp"
     },
     {
-        "id": 28,
+        "id": 29,
         "genero":"mujer",
         "nombre": "Vestido",
         "tipo": "Verano",
@@ -310,7 +322,7 @@
         "imagen": "/assets/mujer/vestidos/vestido_verano_azul.webp"
     },
     {
-        "id": 29,
+        "id": 30,
         "genero":"mujer",
         "nombre": "Vestido",
         "tipo": "Largo con Flores",
@@ -321,7 +333,7 @@
         "imagen": "/assets/mujer/vestidos/vestido_largo_flores.jpeg"
     },
     {
-        "id": 30,
+        "id": 31,
         "genero":"mujer",
         "nombre": "Vestido",
         "tipo": "Largo de Jean",
@@ -332,7 +344,7 @@
         "imagen": "https://resources.sanborns.com.mx/imagenes-sanborns-ii/1200/7500563947291.jpg?scale=700&qlty=80"
     },
     {
-        "id": 31,
+        "id": 32,
         "genero":"mujer",
         "nombre": "Vestido",
         "tipo": "Simple",

@@ -38,7 +38,8 @@ main {
 
 #cards {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Dos tarjetas por fila */
+    grid-template-columns: repeat(2, 1fr); 
+    grid-template-rows: repeat(2, 1fr); 
     gap: 2rem;
     max-width: 1200px;
     width: 100%;
