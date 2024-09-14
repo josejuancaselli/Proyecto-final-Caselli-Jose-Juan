@@ -61,9 +61,10 @@ const crearProductos = async (arrayRopa) => { // aca entra la categoria que me t
             Toastify({
 
                 text: `Se agregó ${producto.nombre} ${producto.color} ${producto.marca}`,
-
-                duration: 3000
-
+                
+                duration: 3000,
+                gravity: "bottom", 
+                position: "left", 
             }).showToast();
 
             localStorage.setItem("Carro", JSON.stringify(carritoVacio));
@@ -112,7 +113,7 @@ carritoVacio.forEach((producto) => {
 })
 let arrayProductos = []
 const btnLinkCarrito = document.createElement("button");
-btnLinkCarrito.innerText = "Ir al carrito";
+btnLinkCarrito.innerText = "Ir a Pagar";
 mostrarCarrito.appendChild(btnLinkCarrito);
 btnLinkCarrito.addEventListener("click", () => {
     window.location.href = "/pages/carrito.html";
