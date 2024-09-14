@@ -74,7 +74,7 @@ const crearProductos = async (categoria) => {
                 }).showToast();
 
             localStorage.setItem("Carro", JSON.stringify(carritoVacio));
-            MostrarCarrito(producto)
+            //MostrarCarrito(producto)
         })
 
         cardsProd.appendChild(tarjetas)
