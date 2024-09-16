@@ -119,10 +119,6 @@ btnLinkCarrito.addEventListener("click", () => {
     window.location.href = "/pages/carrito.html";
 })
 
-
-
-
-
 document.addEventListener("DOMContentLoaded", () => {
     let categoria = "";
 
