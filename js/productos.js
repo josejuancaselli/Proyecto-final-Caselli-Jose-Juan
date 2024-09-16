@@ -6,7 +6,7 @@ const mostrarCarrito = document.getElementById("mostrar-carrito")
 //     fetch('/json/productos.json')  //me traigo el json
 //         .then(response => response.json())
 //         .then(productos => {
-            
+
 //             const categorias = productos.map((p) => p.categoria); //me traigo las categorias y las guardo como un nuevo array en una variable
 //             const generos = productos.map((p)=> p.genero)
 
@@ -30,7 +30,7 @@ const crearProductos = async (arrayRopa) => { // aca entra la categoria que me t
     cardProducto.forEach(item => {
         let tarjetas = document.createElement("div")
         tarjetas.innerHTML = `
-                    
+
                     <div class="card tarjeta">
                         <div class="card-body">
                             <h3 class="card-title">${item.marca}</h3>
@@ -48,34 +48,40 @@ const crearProductos = async (arrayRopa) => { // aca entra la categoria que me t
         cardBody.appendChild(botonCarrito)
 
         botonCarrito.addEventListener("click", () => {
-            const producto = item
-            carritoVacio.push({
-                id: producto.id,
-                nombre: producto.nombre,
-                marca: producto.marca,
-                color: producto.color,
-                precio: producto.precio,
-                categoria: producto.categoria,
+            const cantidadProducto = carritoVacio.find ((producto)=> producto.id === item.id)
 
-            })
+            if(cantidadProducto){
+                cantidadProducto.cantidad ++
+            }else
+
+                carritoVacio.push({
+                    id: item.id,
+                    nombre: item.nombre,
+                    marca: item.marca,
+                    color: item.color,
+                    precio: item.precio,
+                    cantidad: item.cantidad,
+                    categoria: item.categoria,
+
+                })
             Toastify({
 
-                text: `Se agregó ${producto.nombre} ${producto.color} ${producto.marca}`,
-                
+                text: `Se agregó ${item.nombre} ${item.color} ${item.marca}`,
+
                 duration: 3000,
-                gravity: "bottom", 
-                position: "left", 
+                gravity: "bottom",
+                position: "left",
             }).showToast();
 
             localStorage.setItem("Carro", JSON.stringify(carritoVacio));
-            MostrarCarrito(producto)
+            MostrarCarrito(item)
         })
 
         cardsProd.appendChild(tarjetas)
     });
 
 
-    
+
 }
 
 function MostrarCarrito(producto) {
@@ -88,21 +94,38 @@ function MostrarCarrito(producto) {
     const precioProducto = document.createElement("p");
     precioProducto.innerText = `Precio: $${producto.precio}`;
 
+    const cantidad = document.createElement ("input");
+    cantidad.type = "text";
+    let cantidadProducto = producto.cantidad
+    cantidad.value= cantidadProducto;
+
     const eliminarProducto = document.createElement("button");
     eliminarProducto.innerText = "Eliminar";
+
+
     eliminarProducto.addEventListener("click", () => {
         const index = carritoVacio.findIndex((objeto) => objeto.id === producto.id);
-        if (index >= 0) {
-            carritoVacio.splice(index, 1);
+        
+        if (cantidadProducto >1){
+            carritoVacio.push({
+                cantidad:  cantidadProducto -1,
+            })
+            
             localStorage.setItem("Carro", JSON.stringify(carritoVacio));
-            divProducto.remove();
         }
+
+        // else if (index >= 0) {
+        //     carritoVacio.splice(index, 1);
+        //     localStorage.setItem("Carro", JSON.stringify(carritoVacio));
+        //     divProducto.remove();
+        // }
     });
 
     mostrarCarrito.prepend(divProducto);
     divProducto.appendChild(titulo);
     divProducto.appendChild(precioProducto);
     divProducto.appendChild(eliminarProducto);
+    divProducto.appendChild(cantidad)
 }
 
 
@@ -124,6 +147,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (window.location.pathname.includes("remeras")) {
         categoria = "remeras";
+        console.log(window.location.pathname)
     } else if (window.location.pathname.includes("pantalon")) {
         categoria = "pantalon";
     } else if (window.location.pathname.includes("camisas")) {
