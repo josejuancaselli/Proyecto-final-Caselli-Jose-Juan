@@ -147,7 +147,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (window.location.pathname.includes("remeras")) {
         categoria = "remeras";
-        console.log(window.location.pathname)
     } else if (window.location.pathname.includes("pantalon")) {
         categoria = "pantalon";
     } else if (window.location.pathname.includes("camisas")) {
