@@ -48,12 +48,10 @@ const crearProductos = async (arrayRopa) => { // aca entra la categoria que me t
         cardBody.appendChild(botonCarrito)
 
         botonCarrito.addEventListener("click", () => {
-            const cantidadProducto = carritoVacio.find ((producto)=> producto.id === item.id)
-
-            if(cantidadProducto){
-                cantidadProducto.cantidad ++
-            }else
-
+            const cantidadProducto = carritoVacio.find((producto) => producto.id === item.id)
+            if (cantidadProducto) {
+                cantidadProducto.cantidad++
+            } else
                 carritoVacio.push({
                     id: item.id,
                     nombre: item.nombre,
@@ -62,20 +60,17 @@ const crearProductos = async (arrayRopa) => { // aca entra la categoria que me t
                     precio: item.precio,
                     cantidad: item.cantidad,
                     categoria: item.categoria,
-
                 })
             Toastify({
-
                 text: `Se agregó ${item.nombre} ${item.color} ${item.marca}`,
-
                 duration: 3000,
                 gravity: "bottom",
                 position: "left",
             }).showToast();
-
             localStorage.setItem("Carro", JSON.stringify(carritoVacio));
             MostrarCarrito(item)
         })
+
 
         cardsProd.appendChild(tarjetas)
     });
@@ -85,47 +80,56 @@ const crearProductos = async (arrayRopa) => { // aca entra la categoria que me t
 }
 
 function MostrarCarrito(producto) {
-    const divProducto = document.createElement("div");
-    divProducto.className = "div-producto-carrito";
+    // si  aprieto el boton de agregar quiero que mostrar carrito ejecute la creacion de la card solo si en el carritovacio NO esta el id del producto
+    //si el id del producto se encuentra presente entonces que solo aumente el numero en el input
 
-    const titulo = document.createElement("p");
-    titulo.innerText = `${producto.nombre} ${producto.color}, ${producto.marca}`;
+    
+        const divProducto = document.createElement("div");
+        divProducto.className = "div-producto-carrito";
 
-    const precioProducto = document.createElement("p");
-    precioProducto.innerText = `Precio: $${producto.precio}`;
+        const titulo = document.createElement("p");
+        titulo.innerText = `${producto.nombre} ${producto.color}, ${producto.marca}`;
 
-    const cantidad = document.createElement ("input");
-    cantidad.type = "text";
-    let cantidadProducto = producto.cantidad
-    cantidad.value= cantidadProducto;
+        const precioProducto = document.createElement("p");
+        precioProducto.innerText = `Precio: $${producto.precio}`;
 
-    const eliminarProducto = document.createElement("button");
-    eliminarProducto.innerText = "Eliminar";
+        const cantidad = document.createElement("input");
+        cantidad.id = `${producto.id}`
+        cantidad.type = "text";
+        cantidad.value = producto.cantidad;
+
+        const eliminarProducto = document.createElement("button");
+        eliminarProducto.innerText = "Eliminar";
 
 
-    eliminarProducto.addEventListener("click", () => {
-        const index = carritoVacio.findIndex((objeto) => objeto.id === producto.id);
-        
-        if (cantidadProducto >1){
-            carritoVacio.push({
-                cantidad:  cantidadProducto -1,
-            })
-            
+        eliminarProducto.addEventListener("click", () => {
+            const productoEnCarrito = carritoVacio.find((producto) => producto.id === producto.id);
+
+            if (productoEnCarrito) {
+                if (productoEnCarrito.cantidad > 1) {
+                    productoEnCarrito.cantidad--; // Reduce la cantidad directamente
+                    cantidad.value = productoEnCarrito.cantidad
+                } else {
+                    // Elimina el producto si la cantidad es 1
+                    const index = carritoVacio.findIndex((objeto) => objeto.id === producto.id);
+                    carritoVacio.splice(index, 1);
+                    divProducto.remove(); // Elimina el elemento visual del carrito
+                }
+            }
+
+            // Actualiza el localStorage después de cualquier cambio
             localStorage.setItem("Carro", JSON.stringify(carritoVacio));
-        }
+        });
 
-        // else if (index >= 0) {
-        //     carritoVacio.splice(index, 1);
-        //     localStorage.setItem("Carro", JSON.stringify(carritoVacio));
-        //     divProducto.remove();
-        // }
-    });
+        mostrarCarrito.prepend(divProducto);
+        divProducto.appendChild(titulo);
+        divProducto.appendChild(precioProducto);
+        divProducto.appendChild(eliminarProducto);
+        divProducto.appendChild(cantidad)
 
-    mostrarCarrito.prepend(divProducto);
-    divProducto.appendChild(titulo);
-    divProducto.appendChild(precioProducto);
-    divProducto.appendChild(eliminarProducto);
-    divProducto.appendChild(cantidad)
+    
+
+
 }
 
 
@@ -169,3 +173,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
     crearProductos(categoria);
 });
+console.log(carritoVacio)
