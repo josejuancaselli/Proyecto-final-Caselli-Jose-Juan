@@ -11,7 +11,7 @@ navBar.innerHTML = `
                     </div>
                 </form>
                 <div id="muestra-carrito">
-                    <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+                    <button id="boton-emma"class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
                         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
                             class="bi bi-bag-fill" viewBox="0 0 16 16">
                             <path

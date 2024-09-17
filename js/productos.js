@@ -1,33 +1,77 @@
 let carritoVacio = JSON.parse(localStorage.getItem("Carro")) || []
 const cardsProd = document.getElementById("cards");
-const mostrarCarrito = document.getElementById("mostrar-carrito")
-
-// document.addEventListener("DOMContentLoaded", () => {
-//     fetch('/json/productos.json')  //me traigo el json
-//         .then(response => response.json())
-//         .then(productos => {
-
-//             const categorias = productos.map((p) => p.categoria); //me traigo las categorias y las guardo como un nuevo array en una variable
-//             const generos = productos.map((p)=> p.genero)
-
-//             const categoriaActual = categorias.find((categoria) => window.location.pathname.includes(categoria)) || ""; //recorro el array de categorias y cuando encuentra una que incluya a la categoria la guardo en la variable
-//             const generoActual = generos.find((genero) => window.location.pathname.includes(genero)) || "";
+const offcanvas = document.getElementById("mostrar-carrito")
 
 
-//             crearProductos(categoriaActual || generoActual || ""); //meto la categoria actual en la funcion crearProductos, y esto desata toda la funcion
-//         })
-//         .catch(error => {
-//             console.error('There was a problem with the fetch operation:', error);
-//         });
-// });
+//------------------funcion para mostrar el carrito----------------------------//
+function MostrarCarrito(producto) {
+    // si  aprieto el boton de agregar quiero que mostrar carrito ejecute la creacion de la card solo si en el carritovacio NO esta el id del producto
+    //si el id del producto se encuentra presente entonces que solo aumente el numero en el input
 
+    const divProducto = document.createElement("div");
+    divProducto.className = "div-producto-carrito";
+
+    const titulo = document.createElement("p");
+    titulo.innerText = `${producto.nombre} ${producto.color}, ${producto.marca}`;
+
+    const precioProducto = document.createElement("p");
+    precioProducto.innerText = `Precio: $${producto.precio}`;
+    
+
+    const cantidad = document.createElement("input");
+    cantidad.type = "text";
+    cantidad.value = producto.cantidad;
+    cantidad.id = producto.id;
+
+    const eliminarProducto = document.createElement("button");
+    eliminarProducto.innerText = "Eliminar";
+
+
+
+    eliminarProducto.addEventListener("click", () => {
+        const productoEnCarrito = carritoVacio.find((objeto) => objeto.id === producto.id);
+        const idBoton =document.getElementById(producto.id)
+        
+        if (productoEnCarrito) {
+            if (productoEnCarrito.cantidad > 1) {
+                productoEnCarrito.cantidad--; // Reduce la cantidad directamente
+                idBoton.value = productoEnCarrito.cantidad
+                
+
+
+            } else {
+                // Elimina el producto si la cantidad es 1
+                const index = carritoVacio.findIndex((objeto) => objeto.id === producto.id);
+                carritoVacio.splice(index, 1);
+                divProducto.remove(); // Elimina el elemento visual del carrito
+            }
+        }
+
+        // Actualiza el localStorage después de cualquier cambio
+        localStorage.setItem("Carro", JSON.stringify(carritoVacio));
+    });
+
+    offcanvas.prepend(divProducto)
+    divProducto.appendChild(titulo);
+    divProducto.appendChild(precioProducto);
+    divProducto.appendChild(eliminarProducto)
+    divProducto.appendChild(cantidad)
+    localStorage.setItem("Carro", JSON.stringify(carritoVacio));
+
+
+}
+//-------------------------fin funcion mostrar carrito--------------------------//
+
+
+//--------creo los cards del main--------------------------------------------//
 const crearProductos = async (arrayRopa) => { // aca entra la categoria que me traje
     const respuesta = await fetch("/json/productos.json");
     const datos = await respuesta.json();
     let arrayProductos = datos
-    const cardProducto = arrayProductos.filter((el) => el.categoria === arrayRopa || el.genero === arrayRopa)
+    const listaProducto = arrayProductos.filter((el) => el.categoria === arrayRopa || el.genero === arrayRopa)
 
-    cardProducto.forEach(item => {
+    //----------------------- creo las cards --------------------------------------//
+    listaProducto.forEach(item => {
         let tarjetas = document.createElement("div")
         tarjetas.innerHTML = `
 
@@ -47,11 +91,13 @@ const crearProductos = async (arrayRopa) => { // aca entra la categoria que me t
         botonCarrito.className = ("btn btn-secondary")
         cardBody.appendChild(botonCarrito)
 
+        //----------------boton----------------------//
         botonCarrito.addEventListener("click", () => {
-            const cantidadProducto = carritoVacio.find((producto) => producto.id === item.id)
-            if (cantidadProducto) {
-                cantidadProducto.cantidad++
-            } else
+            const productoActual = carritoVacio.find((producto) => producto.id === item.id)
+            const idBoton =document.getElementById(item.id)
+            
+            
+            if(!productoActual){
                 carritoVacio.push({
                     id: item.id,
                     nombre: item.nombre,
@@ -60,7 +106,16 @@ const crearProductos = async (arrayRopa) => { // aca entra la categoria que me t
                     precio: item.precio,
                     cantidad: item.cantidad,
                     categoria: item.categoria,
+                
                 })
+                MostrarCarrito(item)
+                
+            }else{
+                
+                productoActual.cantidad++;
+                productoActual.precio = productoActual.cantidad * item.precio;
+                idBoton.value = productoActual.cantidad;
+            }
             Toastify({
                 text: `Se agregó ${item.nombre} ${item.color} ${item.marca}`,
                 duration: 3000,
@@ -68,80 +123,29 @@ const crearProductos = async (arrayRopa) => { // aca entra la categoria que me t
                 position: "left",
             }).showToast();
             localStorage.setItem("Carro", JSON.stringify(carritoVacio));
-            MostrarCarrito(item)
+            
+        })//------fin boton--------------------//
+        
+        cardsProd.appendChild(tarjetas)
+    });
+}//------------------------------- fin crear cards -------------------------------------//
+// let productoCantidad = function sumarCantidadTotal(listaObjetos) {
+//     return listaObjetos.reduce((total, objeto) => total + (objeto.cantidad || 0), 0);
+//}
+// let botonEmma = document.querySelector("#boton-emma");
+// botonEmma.addEventListener("click", ()=> {
+//     
+// })
+
+carritoVacio.forEach((producto) => {
+            MostrarCarrito(producto);
         })
 
 
-        cardsProd.appendChild(tarjetas)
-    });
-
-
-
-}
-
-function MostrarCarrito(producto) {
-    // si  aprieto el boton de agregar quiero que mostrar carrito ejecute la creacion de la card solo si en el carritovacio NO esta el id del producto
-    //si el id del producto se encuentra presente entonces que solo aumente el numero en el input
-
-    
-        const divProducto = document.createElement("div");
-        divProducto.className = "div-producto-carrito";
-
-        const titulo = document.createElement("p");
-        titulo.innerText = `${producto.nombre} ${producto.color}, ${producto.marca}`;
-
-        const precioProducto = document.createElement("p");
-        precioProducto.innerText = `Precio: $${producto.precio}`;
-
-        const cantidad = document.createElement("input");
-        cantidad.id = `${producto.id}`
-        cantidad.type = "text";
-        cantidad.value = producto.cantidad;
-
-        const eliminarProducto = document.createElement("button");
-        eliminarProducto.innerText = "Eliminar";
-
-
-        eliminarProducto.addEventListener("click", () => {
-            const productoEnCarrito = carritoVacio.find((producto) => producto.id === producto.id);
-
-            if (productoEnCarrito) {
-                if (productoEnCarrito.cantidad > 1) {
-                    productoEnCarrito.cantidad--; // Reduce la cantidad directamente
-                    cantidad.value = productoEnCarrito.cantidad
-                } else {
-                    // Elimina el producto si la cantidad es 1
-                    const index = carritoVacio.findIndex((objeto) => objeto.id === producto.id);
-                    carritoVacio.splice(index, 1);
-                    divProducto.remove(); // Elimina el elemento visual del carrito
-                }
-            }
-
-            // Actualiza el localStorage después de cualquier cambio
-            localStorage.setItem("Carro", JSON.stringify(carritoVacio));
-        });
-
-        mostrarCarrito.prepend(divProducto);
-        divProducto.appendChild(titulo);
-        divProducto.appendChild(precioProducto);
-        divProducto.appendChild(eliminarProducto);
-        divProducto.appendChild(cantidad)
-
-    
-
-
-}
-
-
-
-
-carritoVacio.forEach((producto) => {
-    MostrarCarrito(producto);
-})
 let arrayProductos = []
 const btnLinkCarrito = document.createElement("button");
 btnLinkCarrito.innerText = "Ir a Pagar";
-mostrarCarrito.appendChild(btnLinkCarrito);
+offcanvas.appendChild(btnLinkCarrito);
 btnLinkCarrito.addEventListener("click", () => {
     window.location.href = "/pages/carrito.html";
 })
@@ -173,4 +177,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
     crearProductos(categoria);
 });
-console.log(carritoVacio)
+// document.addEventListener("DOMContentLoaded", () => {
+//     fetch('/json/productos.json')  //me traigo el json
+//         .then(response => response.json())
+//         .then(productos => {
+
+//             const categorias = productos.map((p) => p.categoria); //me traigo las categorias y las guardo como un nuevo array en una variable
+//             const generos = productos.map((p)=> p.genero)
+
+//             const categoriaActual = categorias.find((categoria) => window.location.pathname.includes(categoria)) || ""; //recorro el array de categorias y cuando encuentra una que incluya a la categoria la guardo en la variable
+//             const generoActual = generos.find((genero) => window.location.pathname.includes(genero)) || "";
+
+
+//             crearProductos(categoriaActual || generoActual || ""); //meto la categoria actual en la funcion crearProductos, y esto desata toda la funcion
+//         })
+//         .catch(error => {
+//             console.error('There was a problem with the fetch operation:', error);
+//         });
+// });
