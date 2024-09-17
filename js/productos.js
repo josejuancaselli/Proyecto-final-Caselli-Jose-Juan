@@ -113,7 +113,7 @@ const crearProductos = async (arrayRopa) => { // aca entra la categoria que me t
             }else{
                 
                 productoActual.cantidad++;
-                productoActual.precio = productoActual.cantidad * item.precio;
+                //productoActual.precio = productoActual.cantidad * item.precio;
                 idBoton.value = productoActual.cantidad;
             }
             Toastify({

@@ -1,5 +1,6 @@
 let carrito = JSON.parse(localStorage.getItem("Carro")) || [];
 
+
 const productosCarrito = document.getElementById("productos-carrito"); // capturo el div de los productos
 
 carrito.forEach((producto) => {
@@ -12,7 +13,7 @@ carrito.forEach((producto) => {
     divProducto.appendChild(titulo);
 
     const precioProducto = document.createElement("p"); //precio para el producto
-    precioProducto.innerText = `Precio: $${producto.precio}`;
+    precioProducto.innerText = `Precio: $${producto.precio * producto.cantidad}`;
     divProducto.appendChild(precioProducto);
 
     const cantidad = document.createElement("input");
@@ -24,7 +25,8 @@ carrito.forEach((producto) => {
     const eliminarProducto = document.createElement("button"); //boton para eliminar producto
     eliminarProducto.innerText = "Eliminar";
     divProducto.appendChild(eliminarProducto);
-
+    
+    
     eliminarProducto.addEventListener("click", () => {
         const productoEnCarrito = carrito.find((objeto) => objeto.id === producto.id);
         const idBoton = document.getElementById(producto.id)
@@ -33,17 +35,20 @@ carrito.forEach((producto) => {
         if (productoEnCarrito.cantidad > 1) {
             productoEnCarrito.cantidad--; // Reduce la cantidad directamente
             idBoton.value = productoEnCarrito.cantidad
+            precioProducto.innerText = `Precio: $${producto.precio * producto.cantidad}`;
+            
+            // 
+            
+            //productoEnCarrito.precio = productoEnCarrito.cantidad * precioUnitario;
+            //precioProducto.innerText = `Precio: $${productoEnCarrito.precio}`;
 
         } else {
             // Elimina el producto si la cantidad es 1
             const index = carrito.findIndex((objeto) => objeto.id === producto.id);
             carrito.splice(index, 1);
-
             divProducto.remove(); // Elimina el elemento visual del carrito
 
         }
-
-
         // Actualiza el localStorage después de cualquier cambio
         localStorage.setItem("Carro", JSON.stringify(carrito));
 
@@ -66,7 +71,7 @@ carrito.forEach((producto) => {
 });
 
 const precioFinal = document.getElementById("precio-final");
-let total = carrito.reduce((acc, producto) => acc + producto.precio, 0);
+let total = carrito.reduce((acc, producto) => acc + producto.precio * producto.cantidad, 0);
 total === 0 ? (precioFinal.innerText = "No hay productos en el carrito") : (precioFinal.innerText = `Precio Final: $${total}`);
 
 const pago = document.getElementById("pago"); // capturo el div de pago
@@ -84,13 +89,13 @@ pago.addEventListener("click", () => {
         if (result.isConfirmed) {
             Swal.fire({
                 title: "Gracias por su compra!",
-                text: "Aguarde un momento, esta siendo redirigido",
+                text: "Aguarde un momento, esta siendo redirigido a Mercado Pago",
                 icon: "success",
             });
-            function redirigir() {
-                setTimeout(() => { window.open('https://www.mercadopago.com.ar/', '_blank'); }, 2000);
-            }
-            redirigir()
+
+            setTimeout(() => { window.open('https://www.mercadopago.com.ar/', '_blank'); }, 3000);
+
+
         }
     });
 });
