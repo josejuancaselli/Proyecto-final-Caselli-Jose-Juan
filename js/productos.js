@@ -81,7 +81,7 @@ const crearProductos = async (arrayRopa) => { // aca entra la categoria que me t
                             <img class=card-img.-top src=${item.imagen} alt = ${item.nombre}/>
                             <h4 class="card-title"> ${item.nombre} ${item.tipo}</h4>
                             <p class="card-text"> Color: ${item.color} </p>
-                            <p class="card-text"> Precio: $${item.precio} </p>
+                            <p class="card-text"> Precio: $${item.precio.toLocaleString('es-ES')} </p>
                         </div>
                     </div>
                     `

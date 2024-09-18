@@ -13,7 +13,7 @@ carrito.forEach((producto) => {
     divProducto.appendChild(titulo);
 
     const precioProducto = document.createElement("p"); //precio para el producto
-    precioProducto.innerText = `Precio: $${producto.precio * producto.cantidad}`;
+    precioProducto.innerText = `Precio: $${(producto.precio * producto.cantidad).toLocaleString('es-ES')}`;
     divProducto.appendChild(precioProducto);
 
     const cantidad = document.createElement("input");
@@ -35,7 +35,7 @@ carrito.forEach((producto) => {
         if (productoEnCarrito.cantidad > 1) {
             productoEnCarrito.cantidad--; // Reduce la cantidad directamente
             idBoton.value = productoEnCarrito.cantidad
-            precioProducto.innerText = `Precio: $${producto.precio * producto.cantidad}`;
+            precioProducto.innerText = `Precio: $${(producto.precio * producto.cantidad).toLocaleString('es-ES')}`;
             
             // 
             
@@ -67,12 +67,14 @@ carrito.forEach((producto) => {
         //    ? (precioFinal.innerText = "No hay productos en el carrito")
         //  : (precioFinal.innerText = `Precio Final: $${total}`);
         // }
+        let total = carrito.reduce((acc, producto) => acc + producto.precio * producto.cantidad, 0);
+total === 0 ? (precioFinal.innerText = "No hay productos en el carrito") : (precioFinal.innerText = `Precio Final: $${total.toLocaleString('es-ES')}`);
     });
 });
 
 const precioFinal = document.getElementById("precio-final");
 let total = carrito.reduce((acc, producto) => acc + producto.precio * producto.cantidad, 0);
-total === 0 ? (precioFinal.innerText = "No hay productos en el carrito") : (precioFinal.innerText = `Precio Final: $${total}`);
+total === 0 ? (precioFinal.innerText = "No hay productos en el carrito") : (precioFinal.innerText = `Precio Final: $${total.toLocaleString('es-ES')}`);
 
 const pago = document.getElementById("pago"); // capturo el div de pago
 pago.addEventListener("click", () => {
@@ -103,7 +105,7 @@ pago.addEventListener("click", () => {
 const eliminarCarrito = document.getElementById("eliminar-carrito");
 eliminarCarrito.addEventListener("click", () => {
 
-    const eliminarDiv = document.querySelector(".div-producto-carrito")
+    const eliminarDiv = document.querySelector("#productos-carrito")
     eliminarDiv.remove()
     precioFinal.innerText = "No hay productos en el carrito"
     localStorage.clear();
