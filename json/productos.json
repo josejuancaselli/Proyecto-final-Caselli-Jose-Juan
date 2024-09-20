@@ -9,7 +9,7 @@
         "precio": 55000,
         "categoria": "remeras",
         "cantidad": 1,
-        "imagen": "/assets/hombre/remeras/remera_roja.avif"
+        "imagen": "../../assets/hombre/remeras/remera_roja.avif"
     },
     {
         "id": 2,
@@ -21,7 +21,7 @@
         "precio": 63000,
         "categoria": "remeras",
         "cantidad": 1,
-        "imagen": "/assets/hombre/remeras/remera_azul.jpg"
+        "imagen": "../../assets/hombre/remeras/remera_azul.jpg"
     },
     {
         "id": 3,
@@ -33,7 +33,7 @@
         "precio": 48000,
         "categoria": "remeras",
         "cantidad": 1,
-        "imagen": "/assets/hombre/remeras/remera_negra.webp"
+        "imagen": "../../assets/hombre/remeras/remera_negra.webp"
     },
     {
         "id": 4,
@@ -45,7 +45,7 @@
         "precio": 63000,
         "categoria": "remeras",
         "cantidad": 1,
-        "imagen": "/assets/hombre/remeras/remera_verde.webp"
+        "imagen": "../../assets/hombre/remeras/remera_verde.webp"
     },
     {
         "id": 5,
@@ -57,7 +57,7 @@
         "precio": 142500,
         "categoria": "pantalon",
         "cantidad": 1,
-        "imagen": "/assets/hombre/pantalon/jean_levis.webp"
+        "imagen": "../../assets/hombre/pantalon/jean_levis.webp"
     },
     {
         "id": 6,
@@ -69,7 +69,7 @@
         "precio": 158000,
         "categoria": "pantalon",
         "cantidad": 1,
-        "imagen": "/assets/hombre/pantalon/jean_bolivia.webp"
+        "imagen": "../../assets/hombre/pantalon/jean_bolivia.webp"
     },
     {
         "id": 7,
@@ -81,7 +81,7 @@
         "precio": 121000,
         "categoria": "pantalon",
         "cantidad": 1,
-        "imagen": "/assets/hombre/pantalon/gabardina_bolivia.webp"
+        "imagen": "../../assets/hombre/pantalon/gabardina_bolivia.webp"
     },
     
     {
@@ -94,7 +94,7 @@
         "precio": 122000,
         "categoria": "pantalon",
         "cantidad": 1,
-        "imagen": "/assets/hombre/pantalon/jean_wrangler.webp"
+        "imagen": "../../assets/hombre/pantalon/jean_wrangler.webp"
     },
     {
         "id": 9,
@@ -106,7 +106,7 @@
         "precio": 70000,
         "categoria": "zapatillas",
         "cantidad": 1,
-        "imagen": "/assets/hombre/zapatillas/zapatillas_topper.jpg"
+        "imagen": "../../assets/hombre/zapatillas/zapatillas_topper.jpg"
     },
     {
         "id": 10,
@@ -118,7 +118,7 @@
         "precio": 89000,
         "categoria": "zapatillas",
         "cantidad": 1,
-        "imagen": "/assets/hombre/zapatillas/converse_negras.webp"
+        "imagen": "../../assets/hombre/zapatillas/converse_negras.webp"
     },
     {
         "id": 11,
@@ -130,7 +130,7 @@
         "precio": 90000,
         "categoria": "zapatillas",
         "cantidad": 1,
-        "imagen": "/assets/hombre/zapatillas/nike_negras.jpg"
+        "imagen": "../../assets/hombre/zapatillas/nike_negras.jpg"
     },
     {
         "id": 12,
@@ -142,7 +142,7 @@
         "precio": 235000,
         "categoria": "zapatillas",
         "cantidad": 1,
-        "imagen": "/assets/hombre/zapatillas/borcegos_caterpillar.webp"
+        "imagen": "../../assets/hombre/zapatillas/borcegos_caterpillar.webp"
     },
     {
         "id": 13,
@@ -154,7 +154,7 @@
         "precio": 82000,
         "categoria": "camisas",
         "cantidad": 1,
-        "imagen": "/assets/hombre/camisas/camisa_aeropostale.webp"
+        "imagen": "../../assets/hombre/camisas/camisa_aeropostale.webp"
     },
     {
         "id": 14,
@@ -166,7 +166,7 @@
         "precio": 160000,
         "categoria": "camisas",
         "cantidad": 1,
-        "imagen": "/assets/hombre/camisas/camisa_lacoste.jpg"
+        "imagen": "../../assets/hombre/camisas/camisa_lacoste.jpg"
     },
     {
         "id": 15,
@@ -178,7 +178,7 @@
         "precio": 25000,
         "categoria": "camisas",
         "cantidad": 1,
-        "imagen": "/assets/hombre/camisas/camisa_hawaiana.jpg"
+        "imagen": "../../assets/hombre/camisas/camisa_hawaiana.jpg"
     },
     {
         "id": 16,
@@ -190,7 +190,7 @@
         "precio": 95000,
         "categoria": "camisas",
         "cantidad": 1,
-        "imagen": "/assets/hombre/camisas/camisa_escosesa.webp"
+        "imagen": "../../assets/hombre/camisas/camisa_escosesa.webp"
     },
     {
         "id": 17,
@@ -202,7 +202,7 @@
         "precio": 25800,
         "categoria": "musculosas",
         "cantidad": 1,
-        "imagen": "/assets/mujer/musculosas/musculosa_verde.webp"
+        "imagen": "../../assets/mujer/musculosas/musculosa_verde.webp"
     },
     {
         "id": 18,
@@ -214,7 +214,7 @@
         "precio": 19500,
         "categoria": "musculosas",
         "cantidad": 1,
-        "imagen": "/assets/mujer/musculosas/musculosa_azul.jpg"
+        "imagen": "../../assets/mujer/musculosas/musculosa_azul.jpg"
     },
     {
         "id": 19,
@@ -226,7 +226,7 @@
         "precio": 17200,
         "categoria": "musculosas",
         "cantidad": 1,
-        "imagen": "/assets/mujer/musculosas/musculosa_rosa.png"
+        "imagen": "../../assets/mujer/musculosas/musculosa_rosa.png"
     },
     {
         "id": 20,
@@ -238,7 +238,7 @@
         "precio": 12000,
         "categoria": "musculosas",
         "cantidad": 1,
-        "imagen": "/assets/mujer/musculosas/musculosa_gris.jpeg"
+        "imagen": "../../assets/mujer/musculosas/musculosa_gris.jpeg"
     },
 
     {
@@ -251,7 +251,7 @@
         "precio": 280000,
         "categoria": "polleras",
         "cantidad": 1,
-        "imagen": "/assets/mujer/polleras/pollera_cuero.jpg"
+        "imagen": "../../assets/mujer/polleras/pollera_cuero.jpg"
     },
     {
         "id": 22,
@@ -263,7 +263,7 @@
         "precio": 41400,
         "categoria": "polleras",
         "cantidad": 1,
-        "imagen": "/assets/mujer/polleras/pollera_denim.webp"
+        "imagen": "../../assets/mujer/polleras/pollera_denim.webp"
     },
     {
         "id": 23,
@@ -275,7 +275,7 @@
         "precio": 29000,
         "categoria": "polleras",
         "cantidad": 1,
-        "imagen": "/assets/mujer/polleras/pollera_roja.webp"
+        "imagen": "../../assets/mujer/polleras/pollera_roja.webp"
     },
     {
         "id": 24,
@@ -287,7 +287,7 @@
         "precio": 30000,
         "categoria": "polleras",
         "cantidad": 1,
-        "imagen": "/assets/mujer/polleras/pollera_negra.webp"
+        "imagen": "../../assets/mujer/polleras/pollera_negra.webp"
     },
 
     {
@@ -300,7 +300,7 @@
         "precio": 144000,
         "categoria": "zapa_mujer",
         "cantidad": 1,
-        "imagen": "/assets/mujer/zapatillas/zapatillas_rosa.jpg"
+        "imagen": "../../assets/mujer/zapatillas/zapatillas_rosa.jpg"
     },
     {
         "id": 26,
@@ -312,7 +312,7 @@
         "precio": 72000,
         "categoria": "zapa_mujer",
         "cantidad": 1,
-        "imagen": "/assets/mujer/zapatillas/zapatillas_verde.jpg"
+        "imagen": "../../assets/mujer/zapatillas/zapatillas_verde.jpg"
     },
     {
         "id": 27,
@@ -324,7 +324,7 @@
         "precio": 89000,
         "categoria": "zapa_mujer",
         "cantidad": 1,
-        "imagen": "/assets/mujer/zapatillas/zapatillas_adidas.jfif"
+        "imagen": "../../assets/mujer/zapatillas/zapatillas_adidas.jfif"
     },
     {
         "id": 28,
@@ -336,7 +336,7 @@
         "precio": 52000,
         "categoria": "zapa_mujer",
         "cantidad": 1,
-        "imagen": "/assets/mujer/zapatillas/sandalias_tachas.webp"
+        "imagen": "../../assets/mujer/zapatillas/sandalias_tachas.webp"
     },
     {
         "id": 29,
@@ -348,7 +348,7 @@
         "precio": 120000,
         "categoria": "vestidos",
         "cantidad": 1,
-        "imagen": "/assets/mujer/vestidos/vestido_verano_azul.webp"
+        "imagen": "../../assets/mujer/vestidos/vestido_verano_azul.webp"
     },
     {
         "id": 30,
@@ -360,7 +360,7 @@
         "precio": 170000,
         "categoria": "vestidos",
         "cantidad": 1,
-        "imagen": "/assets/mujer/vestidos/vestido_largo_flores.jpeg"
+        "imagen": "../../assets/mujer/vestidos/vestido_largo_flores.jpeg"
     },
     {
         "id": 31,
@@ -372,7 +372,7 @@
         "precio": 208000,
         "categoria": "vestidos",
         "cantidad": 1,
-        "imagen": "/assets/mujer/vestidos/vestido_jean.avif"
+        "imagen": "../../assets/mujer/vestidos/vestido_jean.avif"
     },
     {
         "id": 32,
@@ -384,7 +384,7 @@
         "precio": 153000,
         "categoria": "vestidos",
         "cantidad": 1,
-        "imagen": "/assets/mujer/vestidos/vestidorojo.webp"
+        "imagen": "../../assets/mujer/vestidos/vestidorojo.webp"
     }
 ]
 
