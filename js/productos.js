@@ -147,7 +147,7 @@ const btnLinkCarrito = document.createElement("button");
 btnLinkCarrito.innerText = "Ir a Pagar";
 offcanvas.appendChild(btnLinkCarrito);
 btnLinkCarrito.addEventListener("click", () => {
-    window.location.href = "../pages/carrito.html";
+    window.location.href = "../../pages/carrito.html";
 })
 
 document.addEventListener("DOMContentLoaded", () => {
