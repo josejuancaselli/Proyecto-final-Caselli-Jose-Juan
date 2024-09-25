@@ -35,6 +35,7 @@ header.appendChild(navBar)
 
 
 let arrayBuscador = []
+
 const calcularRutaJson = () => {
     const rutaActual = window.location.pathname;
     let rutaJson = "";
