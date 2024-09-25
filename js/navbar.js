@@ -38,10 +38,16 @@ let arrayBuscador = []
 
 
 const buscador = async () => {
-    
-    const response = await fetch("./json/productos.json");
-    const data = await response.json();
-    arrayBuscador = data
+    if (window.location.path === "/index.html") {
+        const response = await fetch("./json/productos.json");
+        const data = await response.json();
+        arrayBuscador = data
+    } else {
+        const response = await fetch("../../json/productos.json");
+        const data = await response.json();
+        arrayBuscador = data
+    }
+
 }
 
 buscador()
@@ -54,25 +60,46 @@ document.querySelector(".buscador").appendChild(resultadosContainer);
 buscadorInput.addEventListener("input", () => {
     const query = buscadorInput.value.toLowerCase();
     resultadosContainer.innerHTML = "";
+    if (window.location.path === "/index.html"){
+        if (query !== "") {
+            const resultadosFiltrados = arrayBuscador.filter(producto =>
+                producto.nombre.toLowerCase().includes(query),
+            );
 
-    if (query !== "") {
-        const resultadosFiltrados = arrayBuscador.filter(producto =>
-            producto.nombre.toLowerCase().includes(query),
-        );
+            resultadosFiltrados.forEach(producto => {
+                const opcion = document.createElement("a");
+                opcion.classList.add("dropdown-item");
 
-        resultadosFiltrados.forEach(producto => {
-            const opcion = document.createElement("a");
-            opcion.classList.add("dropdown-item");
+                opcion.href = `./pages/${producto.genero}/${producto.categoria}.html`.toLowerCase();
+                opcion.textContent = `${producto.nombre} ${producto.marca}, ${producto.genero}`;
+                resultadosContainer.appendChild(opcion);
+            });
 
-            opcion.href = `./pages/${producto.genero}/${producto.categoria}.html`.toLowerCase();
-            opcion.textContent = `${producto.nombre} ${producto.marca}, ${producto.genero}`;
-            resultadosContainer.appendChild(opcion);
-        });
+            resultadosContainer.style.display = "block";
+        } else {
+            resultadosContainer.style.display = "none";
+        }
+    }else{
+        if (query !== "") {
+            const resultadosFiltrados = arrayBuscador.filter(producto =>
+                producto.nombre.toLowerCase().includes(query),
+            );
 
-        resultadosContainer.style.display = "block";
-    } else {
-        resultadosContainer.style.display = "none";
+            resultadosFiltrados.forEach(producto => {
+                const opcion = document.createElement("a");
+                opcion.classList.add("dropdown-item");
+
+                opcion.href = `../../pages/${producto.genero}/${producto.categoria}.html`.toLowerCase();
+                opcion.textContent = `${producto.nombre} ${producto.marca}, ${producto.genero}`;
+                resultadosContainer.appendChild(opcion);
+            });
+
+            resultadosContainer.style.display = "block";
+        } else {
+            resultadosContainer.style.display = "none";
+        }
     }
+        
 });
 
 
