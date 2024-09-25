@@ -36,19 +36,10 @@ header.appendChild(navBar)
 
 let arrayBuscador = []
 
-const calcularRutaJson = () => {
-    const rutaActual = window.location.pathname;
-    let rutaJson = "";
-    if (rutaActual.includes("/Proyecto-final-Caselli-Jose-Juan/")) {
-        rutaJson = "../json/productos.json";
-    } else {
-        rutaJson = "../../json/productos.json";
-    }
-    return rutaJson;
-}
+
 const buscador = async () => {
-    const rutaJson = calcularRutaJson();  // Calcula la ruta correcta
-    const response = await fetch(rutaJson);
+    
+    const response = await fetch("../json/productos.json");
     const data = await response.json();
     arrayBuscador = data
 }
