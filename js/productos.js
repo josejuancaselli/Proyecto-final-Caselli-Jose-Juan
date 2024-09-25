@@ -5,8 +5,6 @@ const offcanvas = document.getElementById("mostrar-carrito")
 
 //------------------funcion para mostrar el carrito----------------------------//
 function MostrarCarrito(producto) {
-    // si  aprieto el boton de agregar quiero que mostrar carrito ejecute la creacion de la card solo si en el carritovacio NO esta el id del producto
-    //si el id del producto se encuentra presente entonces que solo aumente el numero en el input
 
     const divProducto = document.createElement("div");
     divProducto.className = "div-producto-carrito";
@@ -34,20 +32,20 @@ function MostrarCarrito(producto) {
         
         if (productoEnCarrito) {
             if (productoEnCarrito.cantidad > 1) {
-                productoEnCarrito.cantidad--; // Reduce la cantidad directamente
+                productoEnCarrito.cantidad--; 
                 idBoton.value = productoEnCarrito.cantidad
                 
 
 
             } else {
-                // Elimina el producto si la cantidad es 1
+                
                 const index = carritoVacio.findIndex((objeto) => objeto.id === producto.id);
                 carritoVacio.splice(index, 1);
-                divProducto.remove(); // Elimina el elemento visual del carrito
+                divProducto.remove(); 
             }
         }
 
-        // Actualiza el localStorage después de cualquier cambio
+        
         localStorage.setItem("Carro", JSON.stringify(carritoVacio));
     });
 
@@ -68,8 +66,8 @@ const crearProductos = async (arrayRopa) => { // aca entra la categoria que me t
     const respuesta = await fetch("../../json/productos.json");
     const datos = await respuesta.json();
     let arrayProductos = datos
-    const listaProducto = arrayProductos.filter((el) => el.categoria === arrayRopa || el.genero === arrayRopa)
-console.log(arrayRopa)
+    const listaProducto = arrayProductos.filter((el) => el.categoria === arrayRopa)
+
     //----------------------- creo las cards --------------------------------------//
     listaProducto.forEach(item => {
         let tarjetas = document.createElement("div")
@@ -162,29 +160,7 @@ document.addEventListener("DOMContentLoaded", () => {
         categoria = "vestidos";
     } else if (window.location.pathname.includes("zapa_mujer")) {
         categoria = "zapa_mujer";
-    } else if (window.location.pathname.includes("mujer")) {
-        categoria = "mujer";
-    } else if (window.location.pathname.includes("hombre")) {
-        categoria = "hombre";
-    }
+    } 
 
     crearProductos(categoria);
 });
-// document.addEventListener("DOMContentLoaded", () => {
-//     fetch('/json/productos.json')  //me traigo el json
-//         .then(response => response.json())
-//         .then(productos => {
-
-//             const categorias = productos.map((p) => p.categoria); //me traigo las categorias y las guardo como un nuevo array en una variable
-//             const generos = productos.map((p)=> p.genero)
-
-//             const categoriaActual = categorias.find((categoria) => window.location.pathname.includes(categoria)) || ""; //recorro el array de categorias y cuando encuentra una que incluya a la categoria la guardo en la variable
-//             const generoActual = generos.find((genero) => window.location.pathname.includes(genero)) || "";
-
-
-//             crearProductos(categoriaActual || generoActual || ""); //meto la categoria actual en la funcion crearProductos, y esto desata toda la funcion
-//         })
-//         .catch(error => {
-//             console.error('There was a problem with the fetch operation:', error);
-//         });
-// });
