@@ -69,7 +69,7 @@ const crearProductos = async (arrayRopa) => { // aca entra la categoria que me t
     const datos = await respuesta.json();
     let arrayProductos = datos
     const listaProducto = arrayProductos.filter((el) => el.categoria === arrayRopa || el.genero === arrayRopa)
-
+console.log(arrayRopa)
     //----------------------- creo las cards --------------------------------------//
     listaProducto.forEach(item => {
         let tarjetas = document.createElement("div")
@@ -113,7 +113,6 @@ const crearProductos = async (arrayRopa) => { // aca entra la categoria que me t
             }else{
                 
                 productoActual.cantidad++;
-                //productoActual.precio = productoActual.cantidad * item.precio;
                 idBoton.value = productoActual.cantidad;
             }
             Toastify({
@@ -129,13 +128,7 @@ const crearProductos = async (arrayRopa) => { // aca entra la categoria que me t
         cardsProd.appendChild(tarjetas)
     });
 }//------------------------------- fin crear cards -------------------------------------//
-// let productoCantidad = function sumarCantidadTotal(listaObjetos) {
-//     return listaObjetos.reduce((total, objeto) => total + (objeto.cantidad || 0), 0);
-//}
-// let botonEmma = document.querySelector("#boton-emma");
-// botonEmma.addEventListener("click", ()=> {
-//     
-// })
+
 
 carritoVacio.forEach((producto) => {
             MostrarCarrito(producto);
