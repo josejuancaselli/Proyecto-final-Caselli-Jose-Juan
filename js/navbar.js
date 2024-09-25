@@ -39,7 +39,7 @@ let arrayBuscador = []
 
 const buscador = async () => {
     
-    const response = await fetch("../json/productos.json");
+    const response = await fetch("./json/productos.json");
     const data = await response.json();
     arrayBuscador = data
 }
