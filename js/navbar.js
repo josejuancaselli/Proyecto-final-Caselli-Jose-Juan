@@ -40,7 +40,7 @@ const calcularRutaJson = () => {
     const rutaActual = window.location.pathname;
     let rutaJson = "";
     if (rutaActual.includes("/index/")) {
-        rutaJson = "./json/productos.json";
+        rutaJson = "../json/productos.json";
     } else {
         rutaJson = "../../json/productos.json";
     }
