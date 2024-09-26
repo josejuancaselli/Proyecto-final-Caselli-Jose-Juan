@@ -38,7 +38,7 @@ let arrayBuscador = []
 
 
 const buscador = async () => {
-    if (window.location.path === "/index.html") {
+    if (window.location.pathname === "/index.html") {
         const response = await fetch("./json/productos.json");
         const data = await response.json();
         arrayBuscador = data
@@ -60,7 +60,7 @@ document.querySelector(".buscador").appendChild(resultadosContainer);
 buscadorInput.addEventListener("input", () => {
     const query = buscadorInput.value.toLowerCase();
     resultadosContainer.innerHTML = "";
-    if (window.location.path === "/index.html"){
+    if (window.location.pathname === "/index.html"){
         if (query !== "") {
             const resultadosFiltrados = arrayBuscador.filter(producto =>
                 producto.nombre.toLowerCase().includes(query),
