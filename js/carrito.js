@@ -37,10 +37,7 @@ carrito.forEach((producto) => {
             idBoton.value = productoEnCarrito.cantidad
             precioProducto.innerText = `Precio: $${(producto.precio * producto.cantidad).toLocaleString('es-ES')}`;
             
-            // 
             
-            //productoEnCarrito.precio = productoEnCarrito.cantidad * precioUnitario;
-            //precioProducto.innerText = `Precio: $${productoEnCarrito.precio}`;
 
         } else {
             // Elimina el producto si la cantidad es 1
@@ -52,21 +49,7 @@ carrito.forEach((producto) => {
         // Actualiza el localStorage después de cualquier cambio
         localStorage.setItem("Carro", JSON.stringify(carrito));
 
-        //const index = carrito.findIndex((objeto) => objeto.id === producto.id); // guardo el index del objeto del array, haciendole coincidir el id del objeto con el id del objeto que va iterando en el forEach
-        //if (index >= 0) {
-        // como index ahora es un numero puedo compararlo. Le digo si es mayor o igual a 0 porque los index de los arrays arrancan en 0 hacia numeros positivos
-        //  carrito.splice(index, 1); // ahora le digo que borre el index n° igual a la variable index, justamente porque van a coincidir
-        //localStorage.setItem("Carro", JSON.stringify(carrito)); //por ultimo actualizo el storage con el nuevo array sin ese objeto
-        //divProducto.remove(); //borro el DOM
-        //titulo.remove(); //borro el DOM
-        //precioProducto.remove(); //borro el DOM
-        //eliminarProducto.remove(); //borro el DOM
 
-        //let total = carrito.reduce((acc, producto) => acc + producto.precio, 0);
-        //total === 0
-        //    ? (precioFinal.innerText = "No hay productos en el carrito")
-        //  : (precioFinal.innerText = `Precio Final: $${total}`);
-        // }
         let total = carrito.reduce((acc, producto) => acc + producto.precio * producto.cantidad, 0);
 total === 0 ? (precioFinal.innerText = "No hay productos en el carrito") : (precioFinal.innerText = `Precio Final: $${total.toLocaleString('es-ES')}`);
     });

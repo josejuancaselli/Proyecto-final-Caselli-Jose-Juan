@@ -5,7 +5,7 @@ const navFooter = document.createElement("nav")
 navFooter.className = ("navbar-expand-lg bg-body-tertiary navbar")
 navFooter.innerHTML = `
 <div class="container-fluid">
-    <a class="navbar-brand" href="../../index.html">Desde La Silla</a>
+    <a class="navbar-brand" href="/proyecto-final-caselli-jose-juan/index.html">Desde La Silla</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
         data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
         aria-label="Toggle navigation">
@@ -14,7 +14,7 @@ navFooter.innerHTML = `
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="../../pages/contacto.html">Contacto</a>
+                <a class="nav-link" href="/proyecto-final-caselli-jose-juan/pages/contacto.html">Contacto</a>
             </li>
             <li>
                 <a href="https://www.instagram.com/" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="16"

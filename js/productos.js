@@ -63,7 +63,7 @@ function MostrarCarrito(producto) {
 
 //--------creo los cards del main--------------------------------------------//
 const crearProductos = async (arrayRopa) => { // aca entra la categoria que me traje
-    const respuesta = await fetch("../../json/productos.json");
+    const respuesta = await fetch("/proyecto-final-caselli-jose-juan/json/productos.json");
     const datos = await respuesta.json();
     let arrayProductos = datos
     const listaProducto = arrayProductos.filter((el) => el.categoria === arrayRopa)
@@ -138,7 +138,7 @@ const btnLinkCarrito = document.createElement("button");
 btnLinkCarrito.innerText = "Ir a Pagar";
 offcanvas.appendChild(btnLinkCarrito);
 btnLinkCarrito.addEventListener("click", () => {
-    window.location.href = "../../pages/carrito.html";
+    window.location.href = "/proyecto-final-caselli-jose-juan/pages/carrito.html";
 })
 
 document.addEventListener("DOMContentLoaded", () => {

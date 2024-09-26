@@ -3,7 +3,7 @@ const navBar = document.createElement("nav")
 navBar.className = ("navbar")
 navBar.innerHTML = `
             <div class="container-fluid">
-                <h2><a class="navbar-brand" href="../../index.html"> Sobre la Silla </a></h2>
+                <h2><a class="navbar-brand" href="/proyecto-final-caselli-jose-juan/index.html"> Sobre la Silla </a></h2>
                 <form class="d-flex" role="search">
                     <div class="buscador">
                         <input id="buscador-input" class="form-control me-2" type="search" placeholder="Buscar ropa..."
