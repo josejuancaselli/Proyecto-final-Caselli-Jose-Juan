@@ -3,7 +3,7 @@ const navBar = document.createElement("nav")
 navBar.className = ("navbar")
 navBar.innerHTML = `
             <div class="container-fluid">
-                <h2><a class="navbar-brand" href="/proyecto-final-caselli-jose-juan/index.html"> Sobre la Silla </a></h2>
+                <h2><a class="navbar-brand" href="/index.html"> Sobre la Silla </a></h2>
                 <form class="d-flex" role="search">
                     <div class="buscador">
                         <input id="buscador-input" class="form-control me-2" type="search" placeholder="Buscar ropa..."
@@ -39,7 +39,7 @@ let arrayBuscador = []
 
 const buscador = async () => {
     
-        const response = await fetch("/proyecto-final-caselli-jose-juan/json/productos.json");
+        const response = await fetch("/json/productos.json");
         const data = await response.json();
         arrayBuscador = data
     
@@ -66,7 +66,7 @@ buscadorInput.addEventListener("input", () => {
             const opcion = document.createElement("a");
             opcion.classList.add("dropdown-item");
 
-            opcion.href = `/proyecto-final-caselli-jose-juan/pages/${producto.genero}/${producto.categoria}.html`.toLowerCase();
+            opcion.href = `/pages/${producto.genero}/${producto.categoria}.html`.toLowerCase();
             opcion.textContent = `${producto.nombre} ${producto.marca}, ${producto.genero}`;
             resultadosContainer.appendChild(opcion);
         });
