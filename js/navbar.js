@@ -4,6 +4,14 @@ navBar.className = ("navbar")
 navBar.innerHTML = `
             <div class="container-fluid">
                 <h2><a class="navbar-brand" href="/index.html"> Sobre la Silla </a></h2>
+                <ul>
+                    <li>
+                        <a href="/pages/hombre.html">Ropa Hombre</a>
+                    </li>
+                    <li>
+                        <a href="/pages/mujer.html">Ropa Mujer</a>
+                    </li>
+                </ul>
                 <form class="d-flex" role="search">
                     <div class="buscador">
                         <input id="buscador-input" class="form-control me-2" type="search" placeholder="Buscar ropa..."
