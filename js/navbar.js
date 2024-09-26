@@ -62,15 +62,12 @@ resultadosContainer.classList.add("resultados-buscador", "dropdown-menu");
 document.querySelector(".buscador").appendChild(resultadosContainer);
 
 buscadorInput.addEventListener("input", () => {
-    const query = buscadorInput.value.toLowerCase();
+    const busqueda = buscadorInput.value.toLowerCase(); //cargo la constante con el valor de lo que se escribe en el input en minuscula
     resultadosContainer.innerHTML = "";
 
-    if (query !== "") {
-        const resultadosFiltrados = arrayBuscador.filter(producto =>
-            producto.nombre.toLowerCase().includes(query),
-        );
-
-        resultadosFiltrados.forEach(producto => {
+    if (busqueda !== "") { 
+        const resultadosFiltrados = arrayBuscador.filter(producto =>producto.nombre.toLowerCase().includes(busqueda));// si la variable NO esta vacia entonces cargo resultadosFiltrados con el nombre del producto que coincida con la variable
+        resultadosFiltrados.forEach(producto => { // hago un for each de cada resultado y le creo un link a la pagina
             const opcion = document.createElement("a");
             opcion.classList.add("dropdown-item");
 

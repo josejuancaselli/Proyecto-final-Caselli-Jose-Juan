@@ -62,12 +62,12 @@ function MostrarCarrito(producto) {
 
 
 //--------creo los cards del main--------------------------------------------//
-const crearProductos = async (arrayRopa) => { // aca entra la categoria que me traje
+const crearProductos = async (arrayRopa) => { // aca entra la categoria que me traje que puede ser una "categoria" o un "genero"
     const respuesta = await fetch("/json/productos.json");
     const datos = await respuesta.json();
     let arrayProductos = datos
     const listaProducto = arrayProductos.filter((el) => el.categoria === arrayRopa || el.genero === arrayRopa)
-    console.log(arrayRopa)
+    
     //----------------------- creo las cards --------------------------------------//
     listaProducto.forEach(item => {
         let tarjetas = document.createElement("div")
@@ -142,7 +142,7 @@ btnLinkCarrito.addEventListener("click", () => {
 })
 
 document.addEventListener("DOMContentLoaded", () => {
-    let categoria = "";
+    let categoria = ""; //cargo la variable con el valor de la direccion URL haciendo una validacion
 
     if (window.location.pathname.includes("remeras")) {
         categoria = "remeras";
@@ -166,5 +166,5 @@ document.addEventListener("DOMContentLoaded", () => {
         categoria = "hombre";
     }
 
-    crearProductos(categoria);
+    crearProductos(categoria); // meto la categoria adentro de la funcion de crear productos
 });
