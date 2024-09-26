@@ -39,7 +39,7 @@ let arrayBuscador = []
 
 const buscador = async () => {
     
-        const response = await fetch("/Proyecto-final-Caselli-Jose-Juan/json/productos.json");
+        const response = await fetch("/proyecto-final-caselli-jose-juan/json/productos.json");
         const data = await response.json();
         arrayBuscador = data
     
@@ -66,7 +66,7 @@ buscadorInput.addEventListener("input", () => {
             const opcion = document.createElement("a");
             opcion.classList.add("dropdown-item");
 
-            opcion.href = `/Proyecto-final-Caselli-Jose-Juan/pages/${producto.genero}/${producto.categoria}.html`.toLowerCase();
+            opcion.href = `/proyecto-final-caselli-jose-juan/pages/${producto.genero}/${producto.categoria}.html`.toLowerCase();
             opcion.textContent = `${producto.nombre} ${producto.marca}, ${producto.genero}`;
             resultadosContainer.appendChild(opcion);
         });
